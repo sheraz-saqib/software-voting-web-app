@@ -1,5 +1,5 @@
+import TopSection from '@/sections/TopSection/TopSection'
 import React from 'react'
-import TopSection from '@/sections/topSection'
 const page = () => {
   return (
     <>

@@ -11,11 +11,11 @@ const Header = () => {
   return (
     <nav className="w-full px-1 lg:px-10 py-5 bg-transparent text-white z-20">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold">
+        <div className="z-20 text-2xl font-bold">
           LOGO
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden z-20">
           <button onClick={toggleMenu} className="focus:outline-none">
             <svg
               className="w-6 h-6"
@@ -37,19 +37,25 @@ const Header = () => {
         <div
           className={`${
             isOpen ? 'block' : 'hidden'
-          } md:flex md:items-center md:space-x-6 absolute md:static top-16 left-0 w-full md:w-auto bg-transparent p-4 md:p-0 z-10 transition-all duration-300 ease-in-out`}
+          } md:flex md:items-center md:space-x-12 absolute md:static top-16 left-0 w-full md:w-auto bg-transparent p-4 md:p-0 z-10 transition-all duration-300 ease-in-out`}
         >
           <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
-            Home
+            Why Us
           </a>
           <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
-            Services
+            Projects
           </a>
           <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
-            Portfolio
+            Testimonials
           </a>
           <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
-            Contact
+            Team
+          </a>
+          <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
+            Pricing
+          </a>
+          <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
+            FAQ
           </a>
         </div>
       </div>
