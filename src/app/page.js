@@ -5,16 +5,9 @@ import ProductivityTools from '@/components/ProductivityTools/ProductivityTools'
 const page = () => {
   return (
     <>
-
-
 <TopSection/>
 <ProductivityTools/>
 </>
-
-
-
-
-
   )
 }
 
