@@ -26,9 +26,15 @@ body {
 
 }
 
+.Galada-Regular{
+  font-family: 'Galada-Regular' !important;
+}
 
-.galada-regular {
-  font-family: "Galada", cursive;
-  font-weight: 400;
+
+@font-face {
+  font-family: 'Galada-Regular';
+  src: url('/fonts/Galada-Regular.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
+
