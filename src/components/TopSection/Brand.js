@@ -19,7 +19,7 @@ const Brand = () => {
           tailored to your needs, ensuring your brand stands out in a crowded
           market.
         </p>
-        <button className="mt-6 text-xs bg-white text-black px-4 py-1.5 rounded-md hover:bg-gray-200 transition">
+        <button className="mt-6 text-sm bg-white text-black px-4 py-1.5 rounded-md hover:bg-gray-200 transition">
           Get Start Now
         </button>
         <p className="mt-30 text-sm text-gray-400">
