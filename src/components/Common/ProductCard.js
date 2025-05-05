@@ -5,9 +5,9 @@ import { SlLike, SlDislike } from "react-icons/sl";
 // Badge configuration object with categories and colors
 
 
-const ProductCard = ({ imageSrc, productName, category, badgeType }) => {
+const ProductCard = ({ imageSrc, productName, category, badgeType,className }) => {
   return (
-    <div className='bg-white rounded-3xl p-4 min-h-64 cursor-pointer'>
+    <div className={`bg-white rounded-3xl p-4 min-h-64 cursor-pointer ${className}`}>
       {/* top */}
       <div className="flex justify-between items-center">
         {/* like or dislike buttons */}

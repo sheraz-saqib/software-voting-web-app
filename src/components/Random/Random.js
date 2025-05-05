@@ -1,7 +1,6 @@
 import React from 'react'
+import Heading from '../Common/Heading'
 import ProductCard from '../Common/ProductCard'
-import Heading from '../Common/Heading';
-
 const productivityToolsData = [
   {
     imageSrc: "/assets/images/brands/trello.webp",
@@ -28,20 +27,15 @@ const productivityToolsData = [
     badgeType: "free_trial"
   }
 ];
-const AdvanceCrms = () => {
+const Random = () => {
   return (
-    <div className='w-full flex justify-center flex-col items-center mt-10'>
-<Heading
-          text={"Empowering startups "}
-          className={'text-center max-md:text-[1.5rem]!'}
+    <div  className='w-full mt-10 max-md:mt-0'>
+         <div className="flex justify-center items-center flex-col max-width h-full w-full ">
+         <Heading
+          text={"Random"}
         />
-        <Heading
-          text={"with smart CRM solutions"}
-          className={"text-black text-center leading-20 max-md:leading-10 max-md:text-[1.5rem]!"}
-        />
-
-       {/* products */}
-       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4  mt-10 min-h-36  w-full max-w-[90%] ">
+        {/* products */}
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4  mt-10 max-md:mt-10 mb-20 min-h-36  w-full max-w-[90%] ">
         {productivityToolsData.map((tool, index) => (
           <ProductCard
             key={index}
@@ -52,8 +46,9 @@ const AdvanceCrms = () => {
           />
         ))}
       </div>
+         </div>
     </div>
   )
 }
 
-export default AdvanceCrms
+export default Random
