@@ -1,6 +1,7 @@
 import React from 'react'
 
 import FooterTopSection from './TopSection/FooterTopSection'
+import FooterBottomSection from './BottomSecion/FooterBottomSection'
 
 const Footer = () => {
   return (
@@ -9,6 +10,10 @@ const Footer = () => {
           {/* top section */}
          <FooterTopSection/>
          </div>
+
+<div className='flex justify-center'>
+<FooterBottomSection/>
+</div>
       </div>
   )
 }

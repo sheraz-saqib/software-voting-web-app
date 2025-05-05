@@ -1,6 +1,7 @@
 import React from 'react'
 import FooterTopLeftSection from './widgets/FooterTopLeftSection'
 import FooterTopRightSection from './widgets/FooterTopRightSection'
+import FooterBottomSection from '../BottomSecion/FooterBottomSection'
 
 const FooterTopSection = () => {
   return (
@@ -8,7 +9,10 @@ const FooterTopSection = () => {
       {/* left */}
    <FooterTopLeftSection/>
     {/* right */}
+    
     <FooterTopRightSection/>
+
+
     
   </div>
   )
