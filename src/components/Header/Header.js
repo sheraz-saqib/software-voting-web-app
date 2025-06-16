@@ -1,5 +1,6 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import Link from "next/link";
+import React, { useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,10 +10,10 @@ const Header = () => {
   };
 
   return (
-    <nav className="w-full px-4 lg:px-10 py-5 bg-transparent text-white z-20">
+    <nav className="w-full px-4 lg:px-10 py-5 bg-transparent text-black dark:text-white z-20">
       <div
         className={`container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center ${
-          isOpen ? 'bg-black border rounded-md p-4' : 'bg-transparent'
+          isOpen ? "bg-black border rounded-md p-4" : "bg-transparent"
         } md:bg-transparent md:border-none md:p-0 transition-all duration-300 ease-in-out`}
       >
         <div className="flex justify-between items-center w-full md:w-auto">
@@ -31,7 +32,9 @@ const Header = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+                  d={
+                    isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                  }
                 />
               </svg>
             </button>
@@ -40,27 +43,45 @@ const Header = () => {
 
         <div
           className={`${
-            isOpen ? 'block ' : 'hidden'
+            isOpen ? "block " : "hidden"
           } md:flex md:items-center mt-5 md:mt-0 md:space-x-12 w-full md:w-auto bg-transparent md:bg-transparent p-4 md:p-0 z-50 transition-all duration-300 ease-in-out`}
         >
-          <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
-            Why Us
-          </a>
-          <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
+          <Link
+            href="/about"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+          >
+            About Us
+          </Link>
+          <Link
+            href="#"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+          >
             Projects
-          </a>
-          <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
+          </Link>
+          <Link
+            href="#"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+          >
             Testimonials
-          </a>
-          <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
+          </Link>
+          <Link
+            href="#"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+          >
             Team
-          </a>
-          <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
+          </Link>
+          <Link
+            href="#"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+          >
             Pricing
-          </a>
-          <a href="#" className="block md:inline-block py-2 md:py-0 hover:text-gray-300">
+          </Link>
+          <Link
+            href="#"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+          >
             FAQ
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
