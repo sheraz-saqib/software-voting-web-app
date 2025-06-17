@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-const Heading = ({text,className="text-center"}) => {
+const Heading = ({ text, className = "text-center", textSize = "text-[4vw] max-md:text-[2rem]" }) => {
   return (
-    <div  className={`capitalize text-[4vw] text-nowrap max-md:text-[2rem] font-medium text-black max-md:max-w-full md:max-w-[70%]  ${className}`}>{text}</div>
-  )
-}
+    <div
+      className={`capitalize font-medium text-black text-nowrap max-md:max-w-full md:max-w-[70%] ${textSize} ${className}`}
+      dangerouslySetInnerHTML={{ __html: text }}
+    />
+  );
+};
 
-export default Heading
+export default Heading;

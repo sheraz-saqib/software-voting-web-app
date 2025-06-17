@@ -5,10 +5,10 @@ import Brand from "./Brand";
 const TopSection = () => {
   return (
     <div
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat  "
       style={{ backgroundImage: "url('/assets/images/banner-image.webp')" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-[#050215] via-black to-transparent opacity-90 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-white to-white opacity-90 z-0"></div>
       <Header />
       <Brand />
     </div>

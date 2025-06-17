@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="w-full px-4 lg:px-10 py-5 bg-transparent text-black dark:text-white z-20">
+    <nav className="w-full px-4 lg:px-10 py-5 bg-transparent text-black z-20">
       <div
         className={`container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center ${
           isOpen ? "bg-black border rounded-md p-4" : "bg-transparent"
@@ -48,37 +48,37 @@ const Header = () => {
         >
           <Link
             href="/about"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
             About Us
           </Link>
           <Link
             href="#"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
             Projects
           </Link>
           <Link
             href="#"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
             Testimonials
           </Link>
           <Link
             href="#"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
             Team
           </Link>
           <Link
             href="#"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
             Pricing
           </Link>
           <Link
             href="#"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-300"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
             FAQ
           </Link>
