@@ -95,7 +95,7 @@ const CategoriesSection = () => {
           text={"IMAGE"}
           className="text-blue-700"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-4">
           <div className="space-y-5">{renderItems(imageCol1)}</div>
           <div className="space-y-5">{renderItems(imageCol2)}</div>
           <div className="space-y-5">{renderItems(imageCol3)}</div>
