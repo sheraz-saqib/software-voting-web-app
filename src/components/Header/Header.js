@@ -53,34 +53,34 @@ const Header = () => {
             About Us
           </Link>
           <Link
-            href="#"
+            href="/products"
             className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
-            Projects
+            Products
+          </Link>
+          <Link
+            href="/category"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
+          >
+            Category
+          </Link>
+          <Link
+            href="/ranking"
+            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
+          >
+            Ranking
           </Link>
           <Link
             href="#"
             className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
-            Testimonials
+            Contact
           </Link>
           <Link
             href="#"
             className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
-            Team
-          </Link>
-          <Link
-            href="#"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
-          >
-            Pricing
-          </Link>
-          <Link
-            href="#"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
-          >
-            FAQ
+            Login/SignUp
           </Link>
         </div>
       </div>
