@@ -3,7 +3,7 @@ import Heading from '../Common/Heading';
 
 const RevenueSection = () => {
   return (
-    <div className='flex flex-col md:flex-row my-10 bg-[#F2F9FE] w-full'>
+    <div className='flex flex-col md:flex-row py-10 bg-[#F2F9FE] w-full'>
       <div className='w-full md:w-1/2 flex justify-center items-center p-10'>
         <div>
           <Heading
@@ -16,7 +16,7 @@ const RevenueSection = () => {
               placeholder='Enter your email'
               className='text-sm p-3 border rounded bg-white w-full md:max-w-1/3'
             />
-            <button className='bg-[#075CD6] flex justify-center text-white p-3 rounded w-full md:max-w-1/3'>
+            <button className='bg-[#075CD6] cursor-pointer flex justify-center text-white p-3 rounded w-full md:max-w-1/3'>
               Start 14 day trial
             </button>
           </div>

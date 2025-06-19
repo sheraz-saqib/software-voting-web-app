@@ -60,7 +60,7 @@ const CategoriesSection = () => {
     items.map((item, index) => (
       <div
         key={index}
-        className="flex justify-between border-b-4 border-r-4 border-t-4 border-[#0575E6] py-2"
+        className="flex justify-between  border-4 border-[#0575E6] py-2"
       >
         <span className="ml-5">{item.name}</span>
         <span className="mr-3">{item.count}</span>
@@ -86,6 +86,7 @@ const CategoriesSection = () => {
           <div className="space-y-5">{renderItems(textCol3)}</div>
         </div>
       </div>
+
 
       {/* IMAGE Section */}
       <div>

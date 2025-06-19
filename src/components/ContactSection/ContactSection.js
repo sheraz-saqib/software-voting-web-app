@@ -45,7 +45,7 @@ const ContactSection = () => {
         <div className="flex flex-col items-center justify-center px-4">
           <Heading
             className="text-white font-medium"
-            fontSize="text-4xl"
+            fontSize="font-semibold"
             text="Contact Us"
           />
           <PeraContent
@@ -65,22 +65,22 @@ const ContactSection = () => {
         >
           <div className="flex flex-wrap -mx-2 mb-4">
             <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-              <label className="text-[#5A7184] font-bold mb-2 block">
+              <label className="text-[#5A7184] font-semibold mb-2 block">
                 Your name*
               </label>
               <input
                 type="text"
-                defaultValue="Julia William"
+                placeholder="Julia William"
                 className="border border-[#C3CAD9] p-2 rounded w-full"
               />
             </div>
             <div className="w-full md:w-1/2 px-2 ">
-              <label className="text-[#5A7184] font-bold mb-2 block">
+              <label className="text-[#5A7184] font-semibold mb-2 block">
                 Contact email*
               </label>
               <input
                 type="email"
-                defaultValue="you@example.com"
+                placeholder="you@example.com"
                 className="border border-[#C3CAD9] p-2 rounded w-full"
               />
             </div>
@@ -88,21 +88,21 @@ const ContactSection = () => {
 
           <div className="flex flex-wrap -mx-2 mb-4">
             <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-              <label className="text-[#5A7184] font-bold mb-2 block">
+              <label className="text-[#5A7184] font-semibold mb-2 block">
                 Company name*
               </label>
               <input
                 type="text"
-                defaultValue="Company name"
+                placeholder="Company name"
                 className="border border-[#C3CAD9] p-2 rounded w-full"
               />
             </div>
             <div className="w-full md:w-1/2 px-2">
-              <label className="text-[#5A7184] font-bold mb-2 block">
+              <label className="text-[#5A7184] font-semibold mb-2 block">
                 Country*
               </label>
               <select
-                defaultValue="Indonesia"
+                placeholder="Indonesia"
                 className="border border-[#C3CAD9] p-2 rounded w-full"
               >
                 <option value="Indonesia">Indonesia</option>
@@ -111,11 +111,11 @@ const ContactSection = () => {
           </div>
 
           <div className="mb-4">
-            <label className="text-[#5A7184] font-bold mb-2 block">
+            <label className="text-[#5A7184] font-semibold mb-2 block">
               Your message*
             </label>
             <textarea
-              defaultValue="Type your message..."
+              placeholder="Type your message..."
               className="border border-[#C3CAD9] p-2 rounded w-full h-24"
             ></textarea>
           </div>
@@ -126,7 +126,7 @@ const ContactSection = () => {
           </p>
           <button
             type="submit"
-            className="bg-[#075CD6] text-white p-2 px-3 rounded w-fit"
+            className="bg-[#075CD6] cursor-pointer text-white p-2 px-3 rounded w-fit"
           >
             Contact Us
           </button>

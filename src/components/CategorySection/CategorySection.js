@@ -16,7 +16,7 @@ const categories = [
 
 const CategoryBrand = () => {
   return (
-    <div className="bg-[#F2F9FE] py-20 px-4 md:px-10">
+    <div className="bg-[#DCE7FA] py-20 px-4 md:px-10">
       <div className="flex gap-3 flex-col items-center text-center">
         <Heading
           textSize="text-xl md:text-5xl"
@@ -39,32 +39,36 @@ const CategoryBrand = () => {
         />
       </div>
 
-      <div className="w-full mt-8 flex flex-wrap justify-center gap-4">
-        {categories.map((category, index) => (
-          <div
-            key={index}
-            className={`${
-              category.name === "Text & Writing"
-                ? "bg-[#075CD6] text-white"
-                : "bg-white text-black"
-            } w-[40%] sm:w-[30%] md:w-auto p-4 sm:p-5 rounded flex flex-col items-center gap-2`}
-          >
-            <div>
-              <img
-                src={category.image}
-                alt={category.name}
-                className="w-8 h-8 sm:w-10 sm:h-10"
-              />
-            </div>
-            <div className="text-sm sm:text-base text-center">
-              {category.name}
-            </div>
-          </div>
-        ))}
+<div className="w-full mt-8 flex flex-wrap justify-center gap-4">
+  {categories.map((category, index) => (
+    <div
+      key={index}
+      className={`${
+        category.name === "Text & Writing"
+          ? "bg-[#075CD6] text-white"
+          : "bg-white text-black"
+      } 
+        w-[45%] sm:w-[30%] md:w-[138px] 
+        h-[120px] 
+        p-4 sm:p-5 
+        rounded 
+        flex flex-col items-center justify-center gap-2`}
+    >
+      <img
+        src={category.image}
+        alt={category.name}
+        className="w-8 h-8 sm:w-10 sm:h-10"
+      />
+      <div className="text-sm text-center truncate w-full">
+        {category.name}
       </div>
+    </div>
+  ))}
+</div>
+
 
       <div className="flex justify-center text-center mt-8">
-        <button className="bg-[#0575E6] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full flex items-center gap-2 text-sm sm:text-base">
+        <button className="bg-[#0575E6] cursor-pointer text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full flex items-center gap-2 text-sm sm:text-base">
           <div>View More</div>
           <img
             className="w-3.5 h-3.5 sm:w-4 sm:h-4"

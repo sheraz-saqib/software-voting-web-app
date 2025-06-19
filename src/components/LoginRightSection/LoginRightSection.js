@@ -60,7 +60,7 @@ const LoginRightSection = () => {
           </a>
           <button
             type="submit"
-            className="w-full bg-[#075CD6] text-white p-2 rounded-lg hover:bg-blue-700"
+            className="w-full bg-[#075CD6] text-white p-2 cursor-pointer rounded-lg hover:bg-blue-700"
           >
             Login
           </button>
