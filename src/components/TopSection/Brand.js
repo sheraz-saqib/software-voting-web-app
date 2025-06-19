@@ -1,4 +1,5 @@
 import React from "react";
+import LogoMarqee from "../Common/LogoMarqee";
 
 const Brand = () => {
   return (
@@ -19,12 +20,14 @@ const Brand = () => {
           tailored to your needs, ensuring your brand stands out in a crowded
           market.
         </p>
-        <button className="mt-6 text-sm text-white bg-blue-600 px-4 py-1.5 rounded-md hover:bg-gray-900 transition">
+        <button className="mt-6 cursor-pointer text-sm text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-gray-900 transition">
           Get Start Now
         </button>
-        <p className="mt-30 text-sm text-black">
+        <p className="mt-30 mb-10 text-sm text-black">
           Trusted by leading brands:
         </p>
+      <LogoMarqee />
+
       </div>
     </div>
   );
