@@ -17,13 +17,9 @@ const Header = () => {
         } md:bg-transparent md:border-none md:p-0 transition-all duration-300 ease-in-out`}
       >
         <div className="flex justify-between items-center w-full md:w-auto">
-
-           <Link
-            href="/" 
-            >
-          <div className="z-20 text-2xl font-bold">LOGO</div>
+          <Link href="/">
+            <div className="z-20 text-2xl font-bold">LOGO</div>
           </Link>
-          
 
           <div className="md:hidden z-20">
             <button onClick={toggleMenu} className="focus:outline-none">
@@ -77,7 +73,7 @@ const Header = () => {
             Ranking
           </Link>
           <Link
-            href="#"
+            href="/contact"
             className="block md:inline-block py-2 md:py-0 hover:text-gray-900"
           >
             Contact

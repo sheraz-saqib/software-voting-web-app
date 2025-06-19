@@ -8,7 +8,7 @@ const Ranking = () => {
     <>
       <div className="bg-[#F2F9FE]">
         <Header />
-<RankingSection/>
+        <RankingSection />
       </div>
       <Footer />
     </>
