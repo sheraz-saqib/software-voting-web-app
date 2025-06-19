@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="w-full px-4 lg:px-10 py-5 bg-transparent text-black z-20">
+    <nav className="w-full px-4 lg:px-10 py-5  text-black z-20">
       <div
         className={`container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center ${
           isOpen ? "bg-black border rounded-md p-4" : "bg-transparent"

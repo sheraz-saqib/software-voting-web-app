@@ -14,7 +14,6 @@ const page = () => {
 <TopSection/>
 <ProductivityTools/>
 <FinanaceAndAccounting/>
-
 <Featured/>
 <CloudStorage/>
 <TimeManagement/>
