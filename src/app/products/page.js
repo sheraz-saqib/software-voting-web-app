@@ -6,6 +6,7 @@ import Header from "@/components/Header/Header";
 import FilterDropdown from "@/components/FilterDropdown";
 import React, { useState } from "react";
 import ProductCard from "@/components/Common/ProductCard";
+import Link from "next/link";
 
 const Products = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -35,24 +36,31 @@ const Products = () => {
           productName: "Trello",
           category: "Project management",
           badgeType: "free",
+          href: "/innerproduct"
         },
         {
           imageSrc: "/assets/images/brands/trello.webp",
           productName: "Zoho CRM",
           category: "Sales automation",
           badgeType: "free_trial",
+          href: "/innerproduct"
+
         },
         {
           imageSrc: "/assets/images/brands/trello.webp",
           productName: "OneDrive",
           category: "Microsoft cloud storage",
           badgeType: "freemium",
+          href: "/innerproduct"
+
         },
         {
           imageSrc: "/assets/images/brands/trello.webp",
           productName: "Clockify",
           category: "Time tracking",
           badgeType: "freemium",
+          href: "/innerproduct"
+
         },
       ],
     },
@@ -177,6 +185,8 @@ const Products = () => {
 </h3>
                   <a href="#" className="text-blue-600 hover:underline text-sm">See More</a>
                 </div>
+                <Link href="/innerproduct">
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                   {category.data.map((tool, idx) => (
                     <ProductCard
@@ -185,10 +195,14 @@ const Products = () => {
                       productName={tool.productName}
                       category={tool.category}
                       badgeType={tool.badgeType}
+                      href={tool.href}
                     />
                   ))}
                 </div>
+                  </Link>
+
               </div>
+
             ))}
           </div>
         </div>
