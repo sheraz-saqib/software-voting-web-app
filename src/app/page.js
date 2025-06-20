@@ -11,10 +11,10 @@ import FinanaceAndAccounting from '@/components/FinanceAndAccounting/FinanaceAnd
 const page = () => {
   return (
     <>
+
 <TopSection/>
 <ProductivityTools/>
 <FinanaceAndAccounting/>
-
 <Featured/>
 <CloudStorage/>
 <TimeManagement/>

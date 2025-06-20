@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const LogoSlider = () => {
+const LogoMarqee = () => {
   const sliderRef = useRef(null);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const LogoSlider = () => {
   }, []);
 
   return (
-    <div className="py-20">
+    <div className="">
     <div className="w-full flex items-center overflow-hidden bg-black">
       <div ref={sliderRef} className="flex items-center  w-max gap-8 animate-infinite-scroll">
         <img src="/assets/images/sliderlogo1.png" alt="Logo 1" className="w-28 h-28 object-contain" />
@@ -40,4 +40,4 @@ const LogoSlider = () => {
   );
 };
 
-export default LogoSlider;
+export default LogoMarqee;
