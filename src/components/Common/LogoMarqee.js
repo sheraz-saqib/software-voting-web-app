@@ -1,41 +1,56 @@
-'use client'
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+'use client';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 const LogoMarqee = () => {
-  const sliderRef = useRef(null);
+  const marqueeRef = useRef(null);
+
+  const logodata = [
+    { src: '/assets/images/sliderlogo1.png', alt: 'Logo 1' },
+    { src: '/assets/images/sliderlogo2.png', alt: 'Logo 2' },
+    { src: '/assets/images/sliderlogo3.png', alt: 'Logo 3' },
+    { src: '/assets/images/sliderlogo4.png', alt: 'Logo 4' },
+    { src: '/assets/images/sliderlogo5.png', alt: 'Logo 5' },
+    { src: '/assets/images/sliderlogo6.png', alt: 'Logo 6' },
+    { src: '/assets/images/sliderlogo7.png', alt: 'Logo 7' },
+  ];
 
   useEffect(() => {
-    const slider = sliderRef.current;
-    const logos = slider.querySelectorAll("img");
-    const clone = slider.cloneNode(true);
-    slider.parentNode.appendChild(clone);
+    const marquee = marqueeRef.current;
+    if (!marquee) return;
 
-    gsap.to([slider, clone], {
-      x: "-100%",
-      ease: "none",
-      
-      duration: 10,
+    // Duplicate the content to create infinite scrolling
+    marquee.innerHTML += marquee.innerHTML;
+
+    const totalWidth = marquee.scrollWidth / 2;
+
+    gsap.to(marquee, {
+      x: `-=${totalWidth}`,
+      duration: 20,
+      ease: 'linear',
       repeat: -1,
       modifiers: {
-        x: gsap.utils.unitize(x => parseFloat(x) % 100),
+        x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth),
       },
     });
   }, []);
 
   return (
-    <div className="">
-    <div className="w-full flex items-center overflow-hidden bg-black">
-      <div ref={sliderRef} className="flex items-center  w-max gap-8 animate-infinite-scroll">
-        <img src="/assets/images/sliderlogo1.png" alt="Logo 1" className="w-28 h-28 object-contain" />
-        <img src="/assets/images/sliderlogo2.png" alt="Logo 2" className="w-28 h-28 object-contain" />
-        <img src="/assets/images/sliderlogo3.png" alt="Logo 3" className="w-28 h-28 object-contain" />
-        <img src="/assets/images/sliderlogo4.png" alt="Logo 4" className="w-28 h-28 object-contain" />
-        <img src="/assets/images/sliderlogo5.png" alt="Logo 5" className="w-28 h-28 object-contain" />
-        <img src="/assets/images/sliderlogo6.png" alt="Logo 6" className="w-28 h-28 object-contain" />
-        <img src="/assets/images/sliderlogo7.png" alt="Logo 7" className="w-28 h-28 object-contain" />
+    <div className="w-full py-5 flex overflow-hidden bg-black relative">
+      <div
+        className="flex whitespace-nowrap gap-x-8"
+        ref={marqueeRef}
+        style={{ willChange: 'transform', cursor: 'pointer' }}
+      >
+        {logodata.map((item, index) => (
+          <img
+            key={index}
+            src={item.src}
+            alt={item.alt}
+            className="w-28 sm:w-40 md:w-40 lg:w-48 px-4 sm:px-2 md:px-4 lg:px-6 object-contain"
+          />
+        ))}
       </div>
-    </div>
     </div>
   );
 };
