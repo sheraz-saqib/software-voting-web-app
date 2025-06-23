@@ -61,45 +61,45 @@ const ContactSection = () => {
         >
           <div className="flex flex-wrap -mx-2 mb-4">
             <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-              <label className="text-[#5A7184] font-semibold mb-2 block">
+              <label className="text-[#5A7184] max-md:text-sm font-semibold mb-2 block">
                 Your name*
               </label>
               <input
                 type="text"
                 placeholder="Julia William"
-                className="border border-[#C3CAD9] p-2 rounded w-full"
+                className="border border-[#C3CAD9] max-md:text-sm p-2 rounded w-full"
               />
             </div>
             <div className="w-full md:w-1/2 px-2 ">
-              <label className="text-[#5A7184] font-semibold mb-2 block">
+              <label className="text-[#5A7184] max-md:text-sm font-semibold mb-2 block">
                 Contact email*
               </label>
               <input
                 type="email"
                 placeholder="you@example.com"
-                className="border border-[#C3CAD9] p-2 rounded w-full"
+                className="border border-[#C3CAD9] max-md:text-sm p-2 rounded w-full"
               />
             </div>
           </div>
 
           <div className="flex flex-wrap -mx-2 mb-4">
             <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-              <label className="text-[#5A7184] font-semibold mb-2 block">
+              <label className="text-[#5A7184] max-md:text-sm font-semibold mb-2 block">
                 Company name*
               </label>
               <input
                 type="text"
                 placeholder="Company name"
-                className="border border-[#C3CAD9] p-2 rounded w-full"
+                className="border border-[#C3CAD9] max-md:text-sm p-2 rounded w-full"
               />
             </div>
             <div className="w-full md:w-1/2 px-2">
-              <label className="text-[#5A7184] font-semibold mb-2 block">
+              <label className="text-[#5A7184] max-md:text-sm font-semibold mb-2 block">
                 Country*
               </label>
               <select
                 placeholder="Indonesia"
-                className="border border-[#C3CAD9] p-2 rounded w-full"
+                className="border border-[#C3CAD9] max-md:text-sm p-2 rounded w-full"
               >
                 <option value="Indonesia">Indonesia</option>
               </select>
@@ -107,12 +107,12 @@ const ContactSection = () => {
           </div>
 
           <div className="mb-4">
-            <label className="text-[#5A7184] font-semibold mb-2 block">
+            <label className="text-[#5A7184] max-md:text-sm font-semibold mb-2 block">
               Your message*
             </label>
             <textarea
               placeholder="Type your message..."
-              className="border border-[#C3CAD9] p-2 rounded w-full h-24"
+              className="border border-[#C3CAD9] max-md:text-sm p-2 rounded w-full h-24"
             ></textarea>
           </div>
           <p className="text-[#5A7184] text-sm mb-4">
@@ -122,7 +122,7 @@ const ContactSection = () => {
           </p>
           <button
             type="submit"
-            className="bg-[#075CD6] cursor-pointer text-white p-2 px-3 rounded w-fit"
+            className="bg-[#075CD6] max-md:text-sm cursor-pointer text-white p-2 px-3 rounded w-fit"
           >
             Contact Us
           </button>
@@ -132,21 +132,21 @@ const ContactSection = () => {
       <div className="w-full bg-white py-28">
         <div className="flex justify-between items-start gap-6 max-w-5xl mx-auto px-4 flex-wrap md:flex-nowrap">
           {contactOptions.map((option, index) => (
-            <div key={index} className="text-center flex-1 min-w-[200px]">
+            <div key={index} className="text-center flex-1 min-w-[200px] max-md:text-sm">
               <div className="w-12 h-12 mx-auto mb-2 bg-[#EEF4FC] rounded-lg flex items-center justify-center">
                 <img src={option.icon} className="w-8 h-8" alt="" />
               </div>
-              <p className="font-semibold">{option.title}</p>
-              <p className="text-[#5A7184] text-sm">{option.description}</p>
+              <p className="font-semibold max-md:text-sm">{option.title}</p>
+              <p className="text-[#5A7184] text-sm ">{option.description}</p>
               {option.link ? (
                 <a
                   href={option.link}
-                  className="text-[#1565D8] font-semibold text-sm"
+                  className="text-[#1565D8] mt-3 font-semibold text-sm"
                 >
                   {option.linkText}
                 </a>
               ) : (
-                <p className="text-[#1565D8] font-semibold text-sm">
+                <p className="text-[#1565D8] mt-3 font-semibold text-sm">
                   {option.linkText}
                 </p>
               )}
