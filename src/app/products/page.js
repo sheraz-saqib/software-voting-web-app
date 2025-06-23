@@ -106,7 +106,9 @@ const Products = () => {
 
   return (
     <>
-      <Header />
+      <div className="bg-[#F2F9FE]">
+        <Header />
+      </div>
       <div className="bg-[#F2F9FE] py-10 px-4 sm:px-6 md:px-10">
         {/* header */}
         <div className="text-center">

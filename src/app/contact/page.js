@@ -6,10 +6,10 @@ import React from 'react'
 const page = () => {
   return (
     <>
-   <div className="">
-        <Header />
-        <ContactSection/>
+   <div className="bg-[#1565D8]">
+        <Header className={'text-white'} />
       </div>
+        <ContactSection/>
       <Footer />
 </>
 )

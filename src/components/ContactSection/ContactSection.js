@@ -30,12 +30,8 @@ const ContactSection = () => {
 
   return (
     <>
-      <div className="relative bg-[#1565D8] rounded-b-[13rem] h-[50vh] flex items-center justify-center z-10">
-        <img
-          src="/assets/images/oval.png"
-          alt="oval"
-          className="absolute -top-48 -left-48 w-[25rem] h-[25rem]"
-        />
+      <div className="relative overflow-hidden bg-[#1565D8] rounded-bl-[13rem] rounded-br-[13rem] h-[60vh] flex items-center justify-center z-10">
+       
         <img
           src="/assets/images/oval.png"
           alt="oval"
