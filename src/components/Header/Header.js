@@ -10,11 +10,11 @@ const Header = ({className}) => {
   };
 
   return (
-    <nav className={`w-full px-4 lg:px-10 py-5 bg-transparent text-black z-20 ${className}`}>
+    <nav className={`w-full px-4 lg:px-10 py-5  text-black z-20 ${className}`}>
       <div
-        className={`container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center ${
-          isOpen ? "bg-black text-white border rounded-md p-4" : "bg-transparent"
-        } md:bg-transparent md:border-none md:p-0 transition-all duration-300 ease-in-out`}
+        className={`container mx-auto px-4  flex flex-col md:flex-row md:justify-between md:items-center ${
+          isOpen ? "bg-black text-white  rounded-md p-4" : "bg-transparent"
+        } md:bg-transparent    md:p-0 transition-all duration-300 ease-in-out`}
       >
         <div className="flex justify-between items-center w-full md:w-auto ">
           <Link href="/" >

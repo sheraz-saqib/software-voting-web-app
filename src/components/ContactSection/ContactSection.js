@@ -30,15 +30,15 @@ const ContactSection = () => {
 
   return (
     <>
-      <div className="relative overflow-hidden bg-[#1565D8] rounded-bl-[13rem] rounded-br-[13rem] h-[60vh] flex items-center justify-center z-10">
+      <div className="relative overflow-hidden bg-[#1565D8] rounded-bl-[13rem] rounded-br-[13rem] h-[60vh] flex md:items-center md:justify-center z-10 max-md:rounded-bl-none max-md:rounded-br-none max-md:h-[40vh]">
        
         <img
           src="/assets/images/oval.png"
           alt="oval"
-          className="absolute -bottom-36 -right-48 w-[25rem] h-[25rem]"
+          className="absolute -bottom-36 -right-48 size-[30rem] object-contain"
         />
 
-        <div className="flex flex-col items-center justify-center px-4">
+        <div className="flex flex-col items-center md:justify-center mt-10 px-4">
           <Heading
             className="text-white font-medium"
             fontSize="font-semibold"
@@ -51,9 +51,9 @@ const ContactSection = () => {
         </div>
       </div>
 
-      <div className="relative z-30 flex justify-center -mt-16 mb-10 px-4">
+      <div className="relative z-30 flex justify-center -mt-24 max-md:-mt-15 mb-10 px-4 max-md:px-2">
         <form
-          className="bg-white p-11 rounded-lg w-full max-w-4xl md:w-3/4"
+          className="bg-white p-11 rounded-lg w-full max-w-4xl md:w-3/4 max-md:w-full max-md:p-5"
           style={{
             boxShadow:
               "0 -4px 6px -4px rgba(0, 0, 0, 0.1), 4px 0 6px -4px rgba(0, 0, 0, 0.1), -4px 0 6px -4px rgba(0, 0, 0, 0.1)",
