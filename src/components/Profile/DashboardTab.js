@@ -27,23 +27,34 @@ const DashboardTab = () => {
     },
   };
 
+  const cardData = [
+  {
+    title: "Likes",
+    value: mockData.likes,
+  },
+  {
+    title: "Visits",
+    value: mockData.visits,
+  },
+  {
+    title: "Ratings & Reviews",
+    value: mockData.ratingsReviews,
+  },
+];
+
+
   return (
     <div className="space-y-6">
-      {/* Dashboard Cards */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <h4 className="text-lg font-semibold text-[#0657D0]">Likes</h4>
-          <p className="text-2xl font-bold text-[#817A99]">{mockData.likes}</p>
-        </div>
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <h4 className="text-lg font-semibold text-[#0657D0]">Visits</h4>
-          <p className="text-2xl font-bold text-[#817A99]">{mockData.visits}</p>
-        </div>
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <h4 className="text-lg font-semibold text-[#0657D0]">Ratings & Reviews</h4>
-          <p className="text-2xl font-bold text-[#817A99]">{mockData.ratingsReviews}</p>
-        </div>
-      </div>
+  {cardData.map((item, index) => (
+    <div key={index} className="bg-white p-4 rounded-xl shadow-sm">
+      <h4 className="text-lg font-semibold text-[#0657D0]">{item.title}</h4>
+      <p className="text-2xl font-semibold ">{item.value}</p>
+    </div>
+  ))}
+</div>
+
 
       {/* Sub Tabs */}
       <div className="border-b border-gray-200">
