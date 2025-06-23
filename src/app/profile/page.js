@@ -12,18 +12,17 @@ const Profile = () => {
   const router = useRouter();
 
   const handleLogout = () => {
-    // Add logout logic here (e.g., clear session, redirect to login)
     router.push("/login");
   };
 
   const handleHome = () => {
-    router.push("/"); // Redirect to home page
+    router.push("/");
   };
 
   return (
     <div className="flex h-screen bg-[#F2F9FE] font-sans">
       {/* Mobile Navbar */}
-      <div className="md:hidden fixed top-0 left-0 w-full bg-white shadow-md p-4 flex justify-between items-center z-50">
+      <div className="md:hidden fixed top-0 left-0 w-full bg-white shadow-sm p-4 flex justify-between items-center z-50">
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           className="text-[#0657D0] focus:outline-none"
@@ -51,7 +50,7 @@ const Profile = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed md:static top-0 left-0 h-full bg-white shadow-lg p-6 transition-transform duration-300 ${
+        className={`fixed md:static top-0 left-0 h-full bg-white shadow-sm p-6 transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 w-64 z-40`}
       >
@@ -60,13 +59,15 @@ const Profile = () => {
             background: 'linear-gradient(90deg, #817A99 0%, #0657D0 100%)',
             WebkitBackgroundClip: 'text',
           }}>
+
+
             Profile
           </h2>
           <ul className="space-y-4">
             <li>
               <button
                 onClick={() => { setActiveTab("dashboard"); setIsSidebarOpen(false); }}
-                className={`w-full text-left px-4 py-3 rounded-lg text-lg ${
+                className={`w-full text-left px-4 py-3 rounded-lg font-semibold ${
                   activeTab === "dashboard" ? "bg-[#E6F0FA] text-[#0657D0]" : "text-[#7A7491] hover:bg-[#E6F0FA]"
                 } transition duration-200`}
               >
@@ -76,7 +77,7 @@ const Profile = () => {
             <li>
               <button
                 onClick={() => { setActiveTab("profile"); setIsSidebarOpen(false); }}
-                className={`w-full text-left px-4 py-3 rounded-lg text-lg ${
+                className={`w-full text-left px-4 py-3 rounded-lg font-semibold ${
                   activeTab === "profile" ? "bg-[#E6F0FA] text-[#0657D0]" : "text-[#7A7491] hover:bg-[#E6F0FA]"
                 } transition duration-200`}
               >
@@ -86,7 +87,7 @@ const Profile = () => {
             <li>
               <button
                 onClick={() => { setActiveTab("privacy"); setIsSidebarOpen(false); }}
-                className={`w-full text-left px-4 py-3 rounded-lg text-lg ${
+                className={`w-full text-left px-4 py-3 rounded-lg font-semibold ${
                   activeTab === "privacy" ? "bg-[#E6F0FA] text-[#0657D0]" : "text-[#7A7491] hover:bg-[#E6F0FA]"
                 } transition duration-200`}
               >
@@ -96,7 +97,7 @@ const Profile = () => {
             <li>
               <button
                 onClick={() => { handleLogout(); setIsSidebarOpen(false); }}
-                className="w-full text-left px-4 py-3 rounded-lg text-lg text-red-600 hover:bg-red-100 transition duration-200"
+                className="w-full text-left px-4 py-3 rounded-lg font-semibold text-red-600 hover:bg-red-100 transition duration-200"
               >
                 Logout
               </button>
@@ -110,9 +111,9 @@ const Profile = () => {
         <div className="md:block hidden mb-4">
           <button
             onClick={handleHome}
-            className="text-[#0657D0] hover:text-[#0549a6] underline transition duration-200"
+            className="text-xl font-medium cursor-pointer transition duration-200"
           >
-            Back to Home
+            &lt; Back
           </button>
         </div>
         {activeTab === "dashboard" && <DashboardTab />}
