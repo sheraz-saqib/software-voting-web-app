@@ -68,14 +68,14 @@ const CategoryBrand = () => {
 
 
       <div className="flex justify-center text-center mt-8">
-        <button className="bg-[#0575E6] cursor-pointer text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full flex items-center gap-2 text-sm sm:text-base">
-          <div>View More</div>
+        {/* <button className="bg-[#0575E6] cursor-pointer text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full flex items-center gap-2 text-sm sm:text-base">
+          <div>View More </div>
           <img
             className="w-3.5 h-3.5 sm:w-4 sm:h-4"
             src="/assets/images/rightarrow.png"
             alt="right"
           />
-        </button>
+        </button> */}
       </div>
     </div>
   );
