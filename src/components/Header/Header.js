@@ -1,30 +1,39 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Header = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const navLinks = [
+    { name: "About Us", path: "/about" },
+    { name: "Products", path: "/products" },
+    { name: "Category", path: "/category" },
+    { name: "Ranking", path: "/ranking" },
+    { name: "Contact", path: "/contact" },
+    { name: "Login/SignUp", path: "/login" },
+  ];
+
   return (
     <nav
-      className={`w-full px-4 lg:px-10 py-5 bg-transparent text-black z-20 ${className}`}
+      className={`w-full px-0 lg:px-10 py-0 lg:py-5 bg-transparent text-black z-20 ${className}`}
     >
       <div
-        className={`container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center ${
-          isOpen
-            ? "bg-[#DCE7FA] text-black border rounded-md p-4"
-            : "bg-transparent"
-        } md:bg-transparent md:border-none md:p-0 transition-all duration-300 ease-in-out`}
+        className={`container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center  ${
+          isOpen ? "bg-white text-black rounded-b-2xl p-4" : "bg-transparent"
+        } md:bg-transparent md:p-0 transition-all duration-300 ease-in-out`}
       >
-        <div className="flex justify-between items-center w-full md:w-auto ">
+        {/* Top Row */}
+        <div className="flex justify-between items-center w-full md:w-auto">
           <Link href="/">
-            <div className="text-2xl font-bold ">LOGO</div>
+            <div className="text-2xl font-bold">LOGO</div>
           </Link>
-
           <div className="md:hidden z-20">
             <button onClick={toggleMenu} className="focus:outline-none">
               <svg
@@ -47,47 +56,36 @@ const Header = ({ className }) => {
           </div>
         </div>
 
-        <div
-          className={`${
-            isOpen ? "block " : "hidden"
-          } md:flex md:items-center mt-5 md:mt-0 md:space-x-12 w-full md:w-auto bg-transparent md:bg-transparent p-4 md:p-0 z-50 transition-all duration-300 ease-in-out`}
-        >
-          <Link
-            href="/about"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-900 md:no-underline underline"
-          >
-            About Us
-          </Link>
-          <Link
-            href="/products"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-900 md:no-underline underline"
-          >
-            Products
-          </Link>
-          <Link
-            href="/category"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-900 md:no-underline underline"
-          >
-            Category
-          </Link>
-          <Link
-            href="/ranking"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-900 md:no-underline underline"
-          >
-            Ranking
-          </Link>
-          <Link
-            href="/contact"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-900 md:no-underline underline"
-          >
-            Contact
-          </Link>
-          <Link
-            href="/login"
-            className="block md:inline-block py-2 md:py-0 hover:text-gray-900 md:no-underline underline"
-          >
-            Login/SignUp
-          </Link>
+        {/* Mobile Nav — Only render when open */}
+        {isOpen && (
+          <div className="flex flex-col md:hidden w-full mt-4 space-y-2 transition-all duration-300 ease-in-out">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={`block py-2 hover:text-gray-900 transition-all duration-200 ${
+                  pathname === link.path ? "text-blue-600 font-semibold" : ""
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex md:items-center z-50 md:space-x-12">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              href={link.path}
+            className={`text-black transition-all duration-200 ${
+  pathname === link.path ? "text-blue-600 font-semibold" : ""
+}`}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
       </div>
     </nav>
