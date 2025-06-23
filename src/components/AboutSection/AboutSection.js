@@ -7,7 +7,9 @@ const AboutSection = () => {
   return (
     <div className=" flex flex-col min-h-screen bg-[#F2F9FE]">
       <div className="mt-0  md:mt-24 flex flex-col justify-center items-center flex-1 w-full">
-        <Heading fontSize="font-semibold" className="" text={"About Us"} />
+        <Heading
+        
+        fontSize="font-semibold" className="" text={"About Us"} />
         <PeraContent
           className="flex justify-center items-center text-black"
           text={

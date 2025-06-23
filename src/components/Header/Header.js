@@ -10,6 +10,7 @@ const Header = ({ className }) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  console.log(pathname);
 
   const navLinks = [
     { name: "About Us", path: "/about" },
@@ -26,7 +27,7 @@ const Header = ({ className }) => {
     >
       <div
         className={`container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center  ${
-          isOpen ? "bg-white text-black rounded-b-2xl p-4" : "bg-transparent"
+          isOpen ? "bg-white rounded-b-2xl p-4" : "bg-transparent"
         } md:bg-transparent md:p-0 transition-all duration-300 ease-in-out`}
       >
         {/* Top Row */}
@@ -79,9 +80,13 @@ const Header = ({ className }) => {
             <Link
               key={link.path}
               href={link.path}
-            className={`text-black transition-all duration-200 ${
-  pathname === link.path ? "text-blue-600 font-semibold" : ""
-}`}
+              className={`transition-all duration-200 ${
+                pathname === link.path && pathname != "/contact"
+                  ? "text-blue-600 font-semibold"
+                  : pathname == "/contact" && pathname === link.path
+                  ? "text-black font-semibold"
+                  : ""
+              }`}
             >
               {link.name}
             </Link>

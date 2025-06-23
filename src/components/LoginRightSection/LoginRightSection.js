@@ -1,10 +1,16 @@
-'use client'
+"use client";
 import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const LoginRightSection = () => {
   const router = useRouter();
+
+  const socialLogins = [
+    { src: "/assets/images/google.png", alt: "Google", size: "w-8 h-8" },
+    { src: "/assets/images/fb.png", alt: "Facebook", size: "w-8 h-8" },
+    { src: "/assets/images/apple.png", alt: "Apple", size: "w-10 h-10" },
+  ];
 
   return (
     <div className="relative w-full md:w-1/2 h-screen flex items-center justify-center bg-white px-4">
@@ -31,7 +37,7 @@ const LoginRightSection = () => {
       <div className="p-8 w-full max-w-xl bg-white rounded-lg">
         <h2 className="text-2xl font-bold mb-4">Hello Again!</h2>
         <p className="text-black mb-6">Welcome Back</p>
-        
+
         <form className="space-y-4">
           <div>
             <label className="block text-gray-700 text-sm mb-2" htmlFor="email">
@@ -45,7 +51,10 @@ const LoginRightSection = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-700 text-sm mb-2" htmlFor="password">
+            <label
+              className="block text-gray-700 text-sm mb-2"
+              htmlFor="password"
+            >
               Password
             </label>
             <input
@@ -74,17 +83,15 @@ const LoginRightSection = () => {
           </div>
         </form>
 
-        {/* Social Logins */}
         <div className="flex justify-center space-x-4 mt-4">
-          <button className="w-10 h-10 rounded-full flex items-center justify-center">
-            <img src="/assets/images/google.png" alt="Google" className="w-8 h-8" />
-          </button>
-          <button className="w-10 h-10 rounded-full flex items-center justify-center">
-            <img src="/assets/images/fb.png" alt="Facebook" className="w-8 h-8" />
-          </button>
-          <button className="w-10 h-10 rounded-full flex items-center justify-center">
-            <img src="/assets/images/apple.png" alt="Apple" className="w-10 h-10" />
-          </button>
+          {socialLogins.map((social, index) => (
+            <button
+              key={index}
+              className=" cursor-pointer w-10 h-10 rounded-full flex items-center justify-center"
+            >
+              <img src={social.src} alt={social.alt} className={social.size} />
+            </button>
+          ))}
         </div>
       </div>
     </div>

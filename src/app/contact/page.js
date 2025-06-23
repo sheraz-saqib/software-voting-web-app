@@ -12,7 +12,7 @@ const page = () => {
           alt="oval"
           className="absolute z-20 -top-48 -left-48 size-[30rem] object-contain"
         />
-        <Header className={'text-white'} />
+        <Header className={'text-white!'} />
       </div>
       
         <ContactSection/>

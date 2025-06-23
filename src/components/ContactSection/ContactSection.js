@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "../Common/Heading";
 import PeraContent from "../Common/PeraContent";
 
-const ContactSection = () => {
+const   ContactSection = () => {
   const contactOptions = [
     {
       icon: "/assets/images/contact3.png",
