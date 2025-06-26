@@ -1,26 +1,121 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Heading from "../Common/Heading";
 import PeraContent from "../Common/PeraContent";
 import LogoMarqee from "../Common/LogoMarqee";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const AboutSection = () => {
+  const headingRef = useRef(null);
+  const peraContentRef = useRef(null);
+  const imageGridRef = useRef(null);
+  const logoMarqeeRef = useRef(null);
+
+  useEffect(() => {
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate Heading
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate Paragraph
+    gsap.fromTo(
+      peraContentRef.current,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: peraContentRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate Image Grid
+    const images = imageGridRef.current?.querySelectorAll("img");
+    if (images) {
+      gsap.fromTo(
+        images,
+        { opacity: 0, y: 50, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+          delay: 0.4,
+          scrollTrigger: {
+            trigger: imageGridRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    // Animate LogoMarqee
+    gsap.fromTo(
+      logoMarqeeRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: logoMarqeeRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Cleanup ScrollTrigger on component unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
-    <div className=" flex flex-col min-h-screen bg-[#F2F9FE]">
-      <div className="mt-0  md:mt-24 flex flex-col justify-center items-center flex-1 w-full">
-        <Heading
-        
-        fontSize="font-semibold" className="" text={"About Us"} />
-        <PeraContent
-          className="flex justify-center items-center text-black"
-          text={
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          }
-        />
+    <div className="flex flex-col min-h-screen bg-[#F2F9FE]">
+      <div className="mt-0 md:mt-24 flex flex-col justify-center items-center flex-1 w-full">
+        <div ref={headingRef}>
+          <Heading fontSize="font-semibold" className="" text={"About Us"} />
+        </div>
+        <div ref={peraContentRef}>
+          <PeraContent
+            className="flex justify-center items-center text-black"
+            text={
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          />
+        </div>
       </div>
 
       {/* ABOUT IMAGES */}
-
-      <div className="px-3 flex justify-center items-center w-full my-10">
+      <div ref={imageGridRef} className="px-3 flex justify-center items-center w-full my-10">
         <div className="grid grid-cols-3 md:grid-cols-5 md:gap-4 gap-2 justify-items-center w-fit">
           <div className="hidden md:block col-span-1 mt-24">
             <img
@@ -69,10 +164,9 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-      <div className=" my-12">
-      <LogoMarqee />
+      <div ref={logoMarqeeRef} className="my-12">
+        <LogoMarqee />
       </div>
-      
     </div>
   );
 };

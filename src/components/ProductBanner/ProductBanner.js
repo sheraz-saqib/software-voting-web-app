@@ -1,6 +1,14 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import { CiShare1 } from "react-icons/ci";
 import InnerProductCard from "../Common/InnerProductCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const ProductBanner = () => {
   // JSON data for productivity tools
@@ -9,27 +17,122 @@ const ProductBanner = () => {
       imageSrc: "/assets/images/evernote.png",
       productName: "Evernote",
       category: "Note-taking",
-      badgeType: "freemium"
+      badgeType: "freemium",
     },
     {
       imageSrc: "/assets/images/asana.png",
       productName: "Asana",
       category: "Task management",
-      badgeType: "freemium"
+      badgeType: "freemium",
     },
     {
       imageSrc: "/assets/images/notion.png",
       productName: "Notion",
       category: "Workspace and note-taking",
-      badgeType: "freemium"
-    }
+      badgeType: "freemium",
+    },
   ];
+
+  const leftContentRef = useRef(null);
+  const productImageRef = useRef(null);
+  const navBarRef = useRef(null);
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate Left Content (Heading, Paragraph, Button, Ratings, etc.)
+    const leftContentElements = leftContentRef.current?.querySelectorAll(
+      "div, h1, p, button, .flex"
+    );
+    if (leftContentElements) {
+      gsap.fromTo(
+        leftContentElements,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: leftContentRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    // Animate Product Image
+    gsap.fromTo(
+      productImageRef.current,
+      { opacity: 0, scale: 0.95 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: productImageRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate Navigation Bar
+    gsap.fromTo(
+      navBarRef.current,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: navBarRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate Swiper Slides (Productivity Tools)
+    const slides = swiperRef.current?.querySelectorAll(".swiper-slide");
+    if (slides) {
+      gsap.fromTo(
+        slides,
+        { opacity: 0, y: 50, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: swiperRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    // Cleanup ScrollTrigger on component unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
     <>
       <div className="px-3 md:px-6 flex bg-[#FEFEFE] max-md:flex-col">
-        <div className="p-6 w-1/2 max-md:w-full">
-          <div className="flex items-center space-x-2 mb-4  max-md:items-start max-md:space-y-2">
+        <div ref={leftContentRef} className="p-6 w-1/2 max-md:w-full">
+          <div className="flex items-center space-x-2 mb-4 max-md:items-start max-md:space-y-2">
             <a href="#" className="hover:underline">
               {" "}
               &lt; Back
@@ -99,7 +202,7 @@ const ProductBanner = () => {
           </div>
         </div>
         {/* PRODUCT RIGHT IMAGE */}
-        <div className="w-1/2 max-md:hidden">
+        <div ref={productImageRef} className="w-1/2 max-md:hidden">
           <img
             src="/assets/images/productimg.png"
             className="w-[48rem] h-auto"
@@ -108,16 +211,21 @@ const ProductBanner = () => {
         </div>
       </div>
       {/* Productivity Tools Section */}
-      <div className="flex items-center px-2 md:px-3 bg-[#075CD6] w-full text-white py-2">
-        {/* TOP NAVIGATION BAR */}
-        <nav className="flex space-x-2.5 md:space-x-4 px-3 md:px-5 py-2  max-md:space-y-2 md:text-base text-xs">
-          <a href="#productInfo" className="hover:underline">PRODUCT INFORMATION</a>
-          <a href="#review" className="hover:underline">REVIEWS</a>
-          <a href="#pricing" className="hover:underline">PRICING</a>
-        </nav>
-
-        {/* BELOW NAV: Cards + Image + Features */}
-      
+      <div className="bg-[#075CD6] w-full text-white py-2">
+        <div ref={navBarRef} className="flex items-center px-2 md:px-3">
+          <nav className="flex space-x-2.5 md:space-x-4 px-3 md:px-5 py-2 max-md:space-y-2 md:text-base text-xs">
+            <a href="#productInfo" className="hover:underline">
+              PRODUCT INFORMATION
+            </a>
+            <a href="#review" className="hover:underline">
+              REVIEWS
+            </a>
+            <a href="#pricing" className="hover:underline">
+              PRICING
+            </a>
+          </nav>
+        </div>
+       
       </div>
     </>
   );

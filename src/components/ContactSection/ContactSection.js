@@ -1,8 +1,15 @@
-import React from "react";
+'use client'
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import Heading from "../Common/Heading";
 import PeraContent from "../Common/PeraContent";
 
-const   ContactSection = () => {
+const ContactSection = () => {
+  const formRef = useRef(null);
+  const headingRef = useRef(null);
+  const contactCardsRef = useRef([]);
+  contactCardsRef.current = [];
+
   const contactOptions = [
     {
       icon: "/assets/images/contact3.png",
@@ -28,17 +35,49 @@ const   ContactSection = () => {
     },
   ];
 
+  useEffect(() => {
+    gsap.from(headingRef.current, {
+      opacity: 0,
+      y: -40,
+      duration: 1,
+      delay: 0.3,
+      ease: "power3.out",
+    });
+
+    gsap.from(formRef.current, {
+      opacity: 0,
+      y: 60,
+      duration: 1.2,
+      delay: 0.5,
+      ease: "power3.out",
+    });
+
+    gsap.from(contactCardsRef.current, {
+      opacity: 0,
+      scale: 0.8,
+      duration: 1,
+      delay: 0.3,
+      ease: "back.out(1.7)",
+      stagger: 0.2,
+    });
+  }, []);
+
+  const addToRefs = (el) => {
+    if (el && !contactCardsRef.current.includes(el)) {
+      contactCardsRef.current.push(el);
+    }
+  };
+
   return (
     <>
+      {/* Blue Header Section */}
       <div className="relative overflow-hidden bg-[#1565D8] rounded-bl-[13rem] rounded-br-[13rem] h-[60vh] flex md:items-center md:justify-center z-10 max-md:rounded-bl-none max-md:rounded-br-none max-md:h-[40vh]">
-       
         <img
           src="/assets/images/oval.png"
           alt="oval"
           className="absolute -bottom-36 -right-48 size-[30rem] object-contain"
         />
-
-        <div className="flex flex-col items-center md:justify-center mt-10 px-4">
+        <div className="flex flex-col items-center md:justify-center mt-10 px-4" ref={headingRef}>
           <Heading
             className="text-white font-medium"
             fontSize="font-semibold"
@@ -51,8 +90,10 @@ const   ContactSection = () => {
         </div>
       </div>
 
+      {/* Form Section */}
       <div className="relative z-30 flex justify-center -mt-24 max-md:-mt-15 mb-10 px-4 max-md:px-2">
         <form
+          ref={formRef}
           className="bg-white p-11 rounded-lg w-full max-w-4xl md:w-3/4 max-md:w-full max-md:p-5"
           style={{
             boxShadow:
@@ -70,7 +111,7 @@ const   ContactSection = () => {
                 className="border border-[#C3CAD9] max-md:text-sm p-2 rounded w-full"
               />
             </div>
-            <div className="w-full md:w-1/2 px-2 ">
+            <div className="w-full md:w-1/2 px-2">
               <label className="text-[#5A7184] max-md:text-sm font-semibold mb-2 block">
                 Contact email*
               </label>
@@ -97,10 +138,7 @@ const   ContactSection = () => {
               <label className="text-[#5A7184] max-md:text-sm font-semibold mb-2 block">
                 Country*
               </label>
-              <select
-                placeholder="Indonesia"
-                className="border border-[#C3CAD9] max-md:text-sm p-2 rounded w-full"
-              >
+              <select className="border border-[#C3CAD9] max-md:text-sm p-2 rounded w-full">
                 <option value="Indonesia">Indonesia</option>
               </select>
             </div>
@@ -115,6 +153,7 @@ const   ContactSection = () => {
               className="border border-[#C3CAD9] max-md:text-sm p-2 rounded w-full h-24"
             ></textarea>
           </div>
+
           <p className="text-[#5A7184] text-sm mb-4">
             By submitting this form you agree to our terms and conditions and
             our Privacy Policy which explains how we may collect, use and
@@ -129,15 +168,20 @@ const   ContactSection = () => {
         </form>
       </div>
 
+      {/* Contact Cards */}
       <div className="w-full bg-white py-28">
         <div className="flex justify-between items-start gap-6 max-w-5xl mx-auto px-4 flex-wrap md:flex-nowrap">
           {contactOptions.map((option, index) => (
-            <div key={index} className="text-center flex-1 min-w-[200px] max-md:text-sm">
+            <div
+              key={index}
+              ref={addToRefs}
+              className="text-center flex-1 min-w-[200px] max-md:text-sm"
+            >
               <div className="w-12 h-12 mx-auto mb-2 bg-[#EEF4FC] rounded-lg flex items-center justify-center">
                 <img src={option.icon} className="w-8 h-8" alt="" />
               </div>
               <p className="font-semibold max-md:text-sm">{option.title}</p>
-              <p className="text-[#5A7184] text-sm ">{option.description}</p>
+              <p className="text-[#5A7184] text-sm">{option.description}</p>
               {option.link ? (
                 <a
                   href={option.link}

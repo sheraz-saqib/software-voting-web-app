@@ -1,6 +1,8 @@
-'use client'
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Heading from "../Common/Heading";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const PricingSection = () => {
   // Updated pricing data with trial duration
@@ -16,11 +18,11 @@ const PricingSection = () => {
         "Basic backup & support",
         "Limited system monitoring",
         "Basic security management",
-        "Local switches & hosted projects"
+        "Local switches & hosted projects",
       ],
       buttonText: "Start Free Trial",
       isPopular: false,
-      buttonClass: "bg-white text-black border-2 font-medium"
+      buttonClass: "bg-white text-black border-2 font-medium",
     },
     {
       plan: "Freemium",
@@ -33,11 +35,11 @@ const PricingSection = () => {
         "Standard backup & support",
         "24/7 system monitoring",
         "Standard security management",
-        "Global switches & hosted projects"
+        "Global switches & hosted projects",
       ],
       buttonText: "Get Freemium",
       isPopular: true,
-      buttonClass: "bg-white text-black font-medium"
+      buttonClass: "bg-white text-black font-medium",
     },
     {
       plan: "Paid",
@@ -50,25 +52,105 @@ const PricingSection = () => {
         "Premium backup & support",
         "24/7 advanced monitoring",
         "Advanced security management",
-        "Global switches & hosted projects"
+        "Global switches & hosted projects",
       ],
       buttonText: "Purchase Now",
       isPopular: false,
-      buttonClass: "bg-white text-black font-medium border-2"
-    }
+      buttonClass: "bg-white text-black font-medium border-2",
+    },
   ];
+
+  const headingRef = useRef(null);
+  const trialSectionRef = useRef(null);
+  const pricingPlansRef = useRef(null);
+
+  useEffect(() => {
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate Heading
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate Free Trial Highlight Section
+    const trialElements = trialSectionRef.current?.querySelectorAll(
+      "h3, p, .flex, button"
+    );
+    if (trialElements) {
+      gsap.fromTo(
+        trialElements,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: trialSectionRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    // Animate Pricing Plans
+    const pricingCards = pricingPlansRef.current?.querySelectorAll(".pricing-card");
+    if (pricingCards) {
+      gsap.fromTo(
+        pricingCards,
+        { opacity: 0, y: 50, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+          delay: 0.4,
+          scrollTrigger: {
+            trigger: pricingPlansRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    // Cleanup ScrollTrigger on component unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
     <div id="pricing" className="bg-[#F3F8FE] px-3 md:px-12 py-8 w-full">
-      <Heading
-        fontSize="font-semibold"
-        textSize="text-2xl md:text-4xl"
-        className="mb-4"
-        text="PRICING PLANS"
-      />
+      <div ref={headingRef}>
+        <Heading
+          fontSize="font-semibold"
+          textSize="text-2xl md:text-4xl"
+          className="mb-4"
+          text="PRICING PLANS"
+        />
+      </div>
 
       {/* Free Trial Highlight Section */}
-      <div className="max-w-5xl mx-auto mb-8">
+      <div ref={trialSectionRef} className="max-w-5xl mx-auto mb-8">
         <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 text-center">
           <h3 className="text-2xl font-semibold text-[#075CD6] mb-3">
             Try Our Tools for Free!
@@ -98,14 +180,14 @@ const PricingSection = () => {
       </div>
 
       {/* Pricing Plans */}
-      <div id="pricing-plans" className="flex justify-center">
+      <div ref={pricingPlansRef} id="pricing-plans" className="flex justify-center">
         <div className="max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-6">
           {pricingData.map((plan, index) => (
             <div
               key={index}
               className={`p-6 rounded-lg shadow-sm border border-gray-200 ${
                 plan.isPopular ? "bg-[#075CD6] text-white" : "bg-white text-black"
-              } relative`}
+              } relative pricing-card`}
             >
               {plan.isPopular && (
                 <span className="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-semibold px-2 py-1 rounded-bl rounded-tr">

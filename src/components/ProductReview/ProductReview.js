@@ -1,7 +1,9 @@
-'use client'
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import Heading from "../Common/Heading";
 import { CiStar } from "react-icons/ci";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const ProductReview = () => {
   const [activeTab, setActiveTab] = useState("reviews");
@@ -31,19 +33,94 @@ const ProductReview = () => {
     },
   ];
 
+  const headingRef = useRef(null);
+  const tabsRef = useRef(null);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate Heading
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate Tabs
+    gsap.fromTo(
+      tabsRef.current,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: tabsRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate Content (Reviews or Feedback Form)
+    const contentElements = contentRef.current?.querySelectorAll(
+      ".review-card, .feedback-form > *"
+    );
+    if (contentElements) {
+      gsap.fromTo(
+        contentElements,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+          delay: 0.4,
+          scrollTrigger: {
+            trigger: contentRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    // Cleanup ScrollTrigger on component unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [activeTab]); // Re-run animations when activeTab changes to animate new content
+
   return (
     <div id="review" className="bg-[#F3F8FE] px-3 sm:px-6 md:px-12 py-8 w-full">
-      <Heading
-        fontSize="font-semibold"
-        textSize="text-2xl md:text-4xl"
-        className="mb-6"
-        text="REVIEWS & FEEDBACK"
-      />
+      <div ref={headingRef}>
+        <Heading
+          fontSize="font-semibold"
+          textSize="text-2xl md:text-4xl"
+          className="mb-6"
+          text="REVIEWS & FEEDBACK"
+        />
+      </div>
 
       {/* Tabs */}
-      <div className="flex border-b border-gray-200 mb-6 px-2 md:px-7">
+      <div ref={tabsRef} className="flex border-b border-gray-200 mb-6 px-2 md:px-7">
         <button
-          className={`px-4 py-2 text-sm md:text-base font-medium ${
+          className={`px-4 py-2 text-sm md:text-base cursor-pointer font-medium ${
             activeTab === "reviews"
               ? "border-b-2 border-[#075CD6] text-[#075CD6]"
               : "text-gray-600"
@@ -53,7 +130,7 @@ const ProductReview = () => {
           Reviews
         </button>
         <button
-          className={`px-4 py-2 text-sm md:text-base font-medium ${
+          className={`px-4 py-2 text-sm cursor-pointer md:text-base font-medium ${
             activeTab === "feedback"
               ? "border-b-2 border-[#075CD6] text-[#075CD6]"
               : "text-gray-600"
@@ -64,9 +141,9 @@ const ProductReview = () => {
         </button>
       </div>
 
-      <div className="px-2 md:px-7">
+      <div ref={contentRef} className="px-2 md:px-7">
         {activeTab === "reviews" ? (
-          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-md border mx-auto">
+          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-md border mx-auto review-card">
             <div className="flex items-center mb-4">
               <span className="text-yellow-400 text-xl sm:text-2xl">★★★★★</span>
               <span className="ml-2 text-gray-600 text-sm sm:text-base">
@@ -76,7 +153,7 @@ const ProductReview = () => {
 
             <div className="space-y-4">
               {reviews.map((review) => (
-                <div key={review.id} className="border-b border-gray-200 pb-4">
+                <div key={review.id} className="border-b border-gray-200 pb-4 review-card">
                   <div className="flex items-center mb-2">
                     <div className="w-8 h-8 bg-[#D9D9D9] rounded-full mr-3"></div>
                     <div>
@@ -102,7 +179,7 @@ const ProductReview = () => {
             </div>
           </div>
         ) : (
-          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-md border mx-auto">
+          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-md border mx-auto feedback-form">
             {/* Rating */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
               <div className="flex items-center mb-2 sm:mb-0">
