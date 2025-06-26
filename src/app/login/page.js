@@ -3,7 +3,7 @@ import AuthRightSection from "@/components/LoginRightSection/LoginRightSection";
 
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <div className="flex md:flex-row flex-col">
@@ -14,4 +14,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

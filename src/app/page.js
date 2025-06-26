@@ -7,7 +7,7 @@ import TimeManagement from '@/components/TimeManagement/TimeManagement'
 import Footer from '@/components/Footer/Footer'
 import FinanaceAndAccounting from '@/components/FinanceAndAccounting/FinanaceAndAccounting'
 
-const page = () => {
+const Page = () => {
   return (
     <>
 
@@ -22,4 +22,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

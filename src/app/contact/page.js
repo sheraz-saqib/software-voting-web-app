@@ -3,7 +3,7 @@ import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <>
    <div className="bg-[#1565D8] relative">
@@ -21,4 +21,4 @@ const page = () => {
 )
 }
 
-export default page
+export default Page

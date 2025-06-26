@@ -7,7 +7,7 @@ import ProductFilterDropdown from "@/components/ProductFilterDropdown/ProductFil
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [selectedRatings, setSelectedRatings] = useState([]);
   const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
 
@@ -192,4 +192,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

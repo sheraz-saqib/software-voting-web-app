@@ -8,7 +8,7 @@ import ProductInfo from "@/components/ProductInfo/ProductInfo";
 import ProductReview from "@/components/ProductReview/ProductReview";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <Header />
@@ -26,4 +26,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
