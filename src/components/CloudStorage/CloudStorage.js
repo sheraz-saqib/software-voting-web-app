@@ -33,14 +33,14 @@ const productivityToolsData = [
 const CloudStorage = () => {
   return (
     <div className="w-full min-h-screen bg-[url('/assets/images/bubble.webp')] bg-center bg-no-repeat bg-[#05071A]">
-      <div className="flex justify-center items-center flex-col max-width h-full w-full ">
+      <div className="flex justify-center items-center flex-col max-width h-full w-full pt-10 max-md:pt-5">
         <Heading
           text={"Cloud Stronge & File Sharing"}
           className={"text-white max-[500px]:text-[1.5rem]!"}
         />
         <PeraContent text={'These tools help individuals and teams stay organized and improve their efficiency.Freemium productivity tools often include features like task management, calendars, and project collaboration.'}/>
         {/* button */}
-        <GetStartedButton/>
+        {/* <GetStartedButton/> */}
         {/* dashboard image */}
         <div className="flex justify-center items-center max-w-[70%] my-20 max-md:my-10 max-md:max-w-[90%]">
           <img src="/assets/images/dashboard.webp" alt="" />

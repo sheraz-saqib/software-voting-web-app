@@ -9,6 +9,56 @@ import { Autoplay, Pagination } from 'swiper/modules'; // Import Swiper modules
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+const testimonialsData = [
+            {
+              quote: "The budgeting tool has been a game-changer for me. It's helped me save more than I ever thought possible.",
+              name: "David Gadang",
+              title: "Specialist Doctor",
+              avatar: "/assets/images/avatar.webp",
+            },
+            {
+              quote: "Managing my finances has never been easier with these tools!",
+              name: "Sarah Lee",
+              title: "Financial Advisor",
+              avatar: "/assets/images/avatar.webp",
+            },
+            {
+              quote: "Invoicing is now a breeze, thanks to this amazing app.",
+              name: "John Doe",
+              title: "Small Business Owner",
+              avatar: "/assets/images/avatar.webp",
+            },
+            {
+              quote: "I love how it tracks my expenses so accurately.",
+              name: "Emily Chen",
+              title: "Freelancer",
+              avatar: "/assets/images/avatar.webp",
+            },
+            {
+              quote: "This tool transformed my financial planning.",
+              name: "Michael Brown",
+              title: "Accountant",
+              avatar: "/assets/images/avatar.webp",
+            },
+            {
+              quote: "Saving money has become second nature with this.",
+              name: "Lisa Kim",
+              title: "Marketing Manager",
+              avatar: "/assets/images/avatar.webp",
+            },
+            {
+              quote: "Highly recommend for anyone managing business finances.",
+              name: "Robert Smith",
+              title: "Entrepreneur",
+              avatar: "/assets/images/avatar.webp",
+            },
+            {
+              quote: "A must-have for personal finance management!",
+              name: "Anna Patel",
+              title: "Consultant",
+              avatar: "/assets/images/avatar.webp",
+            },
+          ];
 
 const FinanaceAndAccounting = () => {
   return (
@@ -191,66 +241,17 @@ const FinanaceAndAccounting = () => {
               spaceBetween: 2,
             },
             768: {
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 2,
             },
           }}
           className="py-4"
         >
-          {[
-            {
-              quote: "The budgeting tool has been a game-changer for me. It's helped me save more than I ever thought possible.",
-              name: "David Gadang",
-              title: "Specialist Doctor",
-              avatar: "/assets/images/avatar.webp",
-            },
-            {
-              quote: "Managing my finances has never been easier with these tools!",
-              name: "Sarah Lee",
-              title: "Financial Advisor",
-              avatar: "/assets/images/avatar.webp",
-            },
-            {
-              quote: "Invoicing is now a breeze, thanks to this amazing app.",
-              name: "John Doe",
-              title: "Small Business Owner",
-              avatar: "/assets/images/avatar.webp",
-            },
-            {
-              quote: "I love how it tracks my expenses so accurately.",
-              name: "Emily Chen",
-              title: "Freelancer",
-              avatar: "/assets/images/avatar.webp",
-            },
-            {
-              quote: "This tool transformed my financial planning.",
-              name: "Michael Brown",
-              title: "Accountant",
-              avatar: "/assets/images/avatar.webp",
-            },
-            {
-              quote: "Saving money has become second nature with this.",
-              name: "Lisa Kim",
-              title: "Marketing Manager",
-              avatar: "/assets/images/avatar.webp",
-            },
-            {
-              quote: "Highly recommend for anyone managing business finances.",
-              name: "Robert Smith",
-              title: "Entrepreneur",
-              avatar: "/assets/images/avatar.webp",
-            },
-            {
-              quote: "A must-have for personal finance management!",
-              name: "Anna Patel",
-              title: "Consultant",
-              avatar: "/assets/images/avatar.webp",
-            },
-          ].map((card, index) => (
+          {testimonialsData.map((card, index) => (
             <SwiperSlide key={index}>
              <div
               key={index}
-              className="w-[340px] h-48 min-w-[300px] py-8 bg-[#181E26] text-white rounded-lg p-4 flex flex-col justify-between"
+              className=" h-48 mx-2 py-8 bg-[#181E26] text-white rounded-lg p-4 flex flex-col justify-between"
             >
               <p className=" mb-4">{card.quote}</p>
               <div className="flex items-center">

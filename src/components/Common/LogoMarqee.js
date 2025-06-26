@@ -2,17 +2,22 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-const LogoMarqee = () => {
+const LogoMarquee = () => {
   const marqueeRef = useRef(null);
 
   const logodata = [
-    { src: '/assets/images/sliderlogo1.png', alt: 'Logo 1' },
-    { src: '/assets/images/sliderlogo2.png', alt: 'Logo 2' },
-    { src: '/assets/images/sliderlogo3.png', alt: 'Logo 3' },
-    { src: '/assets/images/sliderlogo4.png', alt: 'Logo 4' },
-    { src: '/assets/images/sliderlogo5.png', alt: 'Logo 5' },
-    { src: '/assets/images/sliderlogo6.png', alt: 'Logo 6' },
-    { src: '/assets/images/sliderlogo7.png', alt: 'Logo 7' },
+    { src: 'https://img.icons8.com/m_rounded/512/FFFFFF/google-logo.png', alt: 'Logo 1' },
+    { src: 'https://img.icons8.com/m_rounded/512/FFFFFF/chatgpt.png', alt: 'Logo 2' },
+    { src: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/grok.png', alt: 'Logo 3' },
+    { src: 'https://img.icons8.com/Dusk_Wired/512/FFFFFF/notion.png', alt: 'Logo 4' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png', alt: 'Logo 5' },
+    { src: 'https://img.icons8.com/m_rounded/512/FFFFFF/linkedin--v2.png', alt: 'Logo 6' },
+    { src: 'https://img.icons8.com/m_rounded/512/FFFFFF/google-logo.png', alt: 'Logo 1' },
+    { src: 'https://img.icons8.com/m_rounded/512/FFFFFF/chatgpt.png', alt: 'Logo 2' },
+    { src: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/grok.png', alt: 'Logo 3' },
+    { src: 'https://img.icons8.com/Dusk_Wired/512/FFFFFF/notion.png', alt: 'Logo 4' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png', alt: 'Logo 5' },
+    { src: 'https://img.icons8.com/m_rounded/512/FFFFFF/linkedin--v2.png', alt: 'Logo 6' },
   ];
 
   useEffect(() => {
@@ -22,7 +27,7 @@ const LogoMarqee = () => {
     // Duplicate the content to create infinite scrolling
     marquee.innerHTML += marquee.innerHTML;
 
-    const totalWidth = marquee.scrollWidth / 2;
+    const totalWidth = marquee.scrollWidth / 3;
 
     gsap.to(marquee, {
       x: `-=${totalWidth}`,
@@ -36,7 +41,11 @@ const LogoMarqee = () => {
   }, []);
 
   return (
-    <div className="w-full py-5 flex overflow-hidden bg-black relative">
+    <div className="w-full flex overflow-hidden relative">
+      {/* Left gradient fade */}
+      {/* <div className="absolute left-0 w-1/10 h-full z-[1] bg-gradient-to-r from-[#fffffffd] to-transparent"></div> */}
+      {/* Right gradient fade */}
+      {/* <div className="absolute right-0 w-1/10 h-full z-[1] bg-gradient-to-l from-[#ffffff] to-transparent"></div> */}
       <div
         className="flex whitespace-nowrap gap-x-8"
         ref={marqueeRef}
@@ -47,7 +56,7 @@ const LogoMarqee = () => {
             key={index}
             src={item.src}
             alt={item.alt}
-            className="w-28 sm:w-40 md:w-40 lg:w-48 px-4 sm:px-2 md:px-4 lg:px-6 object-contain"
+            className="size-24 invert px-4 sm:px-2 md:px-4 lg:px-6 object-contain"
           />
         ))}
       </div>
@@ -55,4 +64,4 @@ const LogoMarqee = () => {
   );
 };
 
-export default LogoMarqee;
+export default LogoMarquee;

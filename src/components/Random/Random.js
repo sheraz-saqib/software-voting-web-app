@@ -32,7 +32,7 @@ const Random = () => {
     <div  className='w-full mt-10 max-md:mt-0'>
          <div className="flex justify-center items-center flex-col max-width h-full w-full ">
          <Heading
-          text={"Random"}
+          text={"Other Product"}
         />
         {/* products */}
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4  mt-10 max-md:mt-10 mb-20 min-h-36  w-full max-w-[90%] ">
