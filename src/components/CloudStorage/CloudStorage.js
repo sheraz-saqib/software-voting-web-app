@@ -1,11 +1,27 @@
-import React from "react";
+'use client'
 import Heading from "../Common/Heading";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import GetStartedButton from "./widgets/GetStartedButton";
 import PeraContent from "../Common/PeraContent";
 import ProductCard from "../Common/ProductCard";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 const productivityToolsData = [
   {
+    imageSrc: "/assets/images/brands/trello.webp",
+    productName: "Trello",
+    category: "Project management",
+    badgeType: "free"
+  },
+  {
+    imageSrc: "/assets/images/brands/trello.webp",
+    productName: "Trello",
+    category: "Project management",
+    badgeType: "free"
+  },{
     imageSrc: "/assets/images/brands/trello.webp",
     productName: "Trello",
     category: "Project management",
@@ -32,13 +48,13 @@ const productivityToolsData = [
 ];
 const CloudStorage = () => {
   return (
-    <div className="w-full min-h-screen bg-[url('/assets/images/bubble.webp')] bg-center bg-no-repeat bg-[#05071A]">
-      <div className="flex justify-center items-center flex-col max-width h-full w-full pt-10 max-md:pt-5">
+    <div className="w-full min-h-screen bg-[url('/assets/images/bubble.webp')] bg-center bg-no-repeat bg-[#E4ECFE]">
+      <div className="flex justify-center items-center flex-col max-width h-full w-full ">
         <Heading
           text={"Cloud Stronge & File Sharing"}
-          className={"text-white max-[500px]:text-[1.5rem]!"}
+          className={"pt-10 max-[500px]:text-[1.5rem]!"}
         />
-        <PeraContent text={'These tools help individuals and teams stay organized and improve their efficiency.Freemium productivity tools often include features like task management, calendars, and project collaboration.'}/>
+        <PeraContent className="text-black" text={'These tools help individuals and teams stay organized and improve their efficiency.Freemium productivity tools often include features like task management, calendars, and project collaboration.'}/>
         {/* button */}
         {/* <GetStartedButton/> */}
         {/* dashboard image */}
@@ -46,17 +62,37 @@ const CloudStorage = () => {
           <img src="/assets/images/dashboard.webp" alt="" />
         </div>
         {/* products */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4  mt-10 max-md:mt-0 mb-20 min-h-36  w-full max-w-[90%] ">
-        {productivityToolsData.map((tool, index) => (
-          <ProductCard
-            key={index}
-            imageSrc={tool.imageSrc}
-            productName={tool.productName}
-            category={tool.category}
-            badgeType={tool.badgeType}
-          />
-        ))}
-      </div>
+
+    <div className="w-full max-w-[90%] rounded-lg p-4">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={16}
+            slidesPerView={4}
+            navigation
+            pagination={{
+              clickable: true,
+              el: '.swiper-pagination',
+            }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 4 },
+            }}
+            className="custom-swiper pb-12"
+          >
+            {productivityToolsData.map((tool, index) => (
+              <SwiperSlide key={index} >
+                <ProductCard
+                  imageSrc={tool.imageSrc}
+                  productName={tool.productName}
+                  category={tool.category}
+                  badgeType={tool.badgeType}
+                />
+              </SwiperSlide>
+            ))}
+         
+          </Swiper>
+        </div>
       </div>
     </div>
   );

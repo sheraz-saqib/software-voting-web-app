@@ -1,8 +1,13 @@
-import React from 'react'
+'use client'
 import Heading from '../Common/Heading'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import ProductCard from '../Common/ProductCard'
 import PeraContent from '../Common/PeraContent';
 import Random from '../Random/Random';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 const productivityToolsData = [
   {
     imageSrc: "/assets/images/brands/trello.webp",
@@ -11,6 +16,17 @@ const productivityToolsData = [
     badgeType: "free"
   },
   {
+    imageSrc: "/assets/images/brands/notion.jpg",
+    productName: "Notion",
+    category: "Note taking",
+    badgeType: "freemium"
+  },
+   {
+    imageSrc: "/assets/images/brands/notion.jpg",
+    productName: "Notion",
+    category: "Note taking",
+    badgeType: "freemium"
+  }, {
     imageSrc: "/assets/images/brands/notion.jpg",
     productName: "Notion",
     category: "Note taking",
@@ -45,22 +61,37 @@ const TimeManagement = () => {
           className={"text-black leading-15 max-md:leading-10"}
         />
          <PeraContent className={'text-[#485E79]! mt-7 max-md:mt-0'} text={'These tools help individuals and teams stay organized and improve their efficiency.Freemium productivity tools often include features like task management, calendars, and project collaboration.'}/>
-        {/* dashboard image */}
         <div className="flex justify-center items-center max-w-[70%] my-20 max-md:my-10 max-md:max-w-[90%]">
           <img src="/assets/images/dashboard2.webp" alt="" />
         </div>
         {/* products */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4  mt-10 max-md:mt-0 mb-20 min-h-36  w-full max-w-[90%] ">
-        {productivityToolsData.map((tool, index) => (
-          <ProductCard
-            key={index}
-            imageSrc={tool.imageSrc}
-            productName={tool.productName}
-            category={tool.category}
-            badgeType={tool.badgeType}
-          />
-        ))}
-      </div>
+   
+   <div className="w-full max-w-[90%] mx-auto">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={16}
+            slidesPerView={4}
+            navigation
+            pagination={{ clickable: true }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 4 },
+            }}
+            className="custom-swiper max-md:mt-10 md:mt-20"
+          >
+            {productivityToolsData.map((tool, index) => (
+              <SwiperSlide key={index}>
+                <ProductCard
+                  imageSrc={tool.imageSrc}
+                  productName={tool.productName}
+                  category={tool.category}
+                  badgeType={tool.badgeType}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
       {/* random */}
       <Random/>

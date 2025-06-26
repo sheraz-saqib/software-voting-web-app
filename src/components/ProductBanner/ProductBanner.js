@@ -114,7 +114,6 @@ const ProductBanner = () => {
           <a href="#" className="hover:underline">PRODUCT INFORMATION</a>
           <a href="#" className="hover:underline">REVIEWS</a>
           <a href="#" className="hover:underline">PRICING</a>
-          <a href="#" className="hover:underline">ANALYTICS</a>
         </nav>
 
         {/* BELOW NAV: Cards + Image + Features */}

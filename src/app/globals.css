@@ -42,3 +42,24 @@
 .center{
   @apply flex justify-center items-center;
 }
+/* Inside globals.css or your component module CSS */
+.custom-swiper .swiper-button-prev,
+.custom-swiper .swiper-button-next {
+  color: #0095FF; /* Button color */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50; /* Ensures buttons are on top */
+}
+
+/* .custom-swiper .swiper-button-prev {
+  left: 30px; 
+}
+
+.custom-swiper .swiper-button-next {
+  right: -30px;
+} */
+
+.custom-swiper .swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
+}

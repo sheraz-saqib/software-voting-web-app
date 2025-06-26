@@ -62,10 +62,11 @@ const testimonialsData = [
 
 const FinanaceAndAccounting = () => {
   return (
-    <div className="bg-black text-white w-full h-full max-width py-10 max-lg:py-4 flex flex-col items-center justify-between">
-      <Heading text={'Finance And Accounting'} className={'mt-5 text-white'} />
+    
+    <div className="bg-[#F0F7FD] text-black w-full h-full max-width py-10 max-lg:py-4 flex flex-col items-center justify-between">
+      <Heading text={'Finance And Accounting'} className={'mt-5'} />
       <div className="flex  justify-center items-center mt-3">
-        <p className="text-white text-xs lg:text-sm w-[75%] text-center  max-lg:w-[95%] max-lg:leading-tight">
+        <p className=" text-xs lg:text-sm w-[75%] text-center  max-lg:w-[95%] max-lg:leading-tight">
           These tools help individuals and business manage finances, track expenses and handle invoices. Freemium versions often limit in the number of users of features
         </p>
       </div>
@@ -219,7 +220,7 @@ const FinanaceAndAccounting = () => {
         </div>
       </div>
 
-      <div className="text-white flex px-8  lg:px-0 justify-center mt-5 py-10 max-lg:pt-6 max-lg:px-4">
+      <div className=" flex px-8  lg:px-0 justify-center mt-5 py-10 max-lg:pt-6 max-lg:px-4">
         <p className="text-sm md:text-xl ">
           More than <span className="text-[#FFB407]">152.78k+</span> users love their financial journey
         </p>

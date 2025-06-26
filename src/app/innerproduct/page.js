@@ -16,7 +16,7 @@ const page = () => {
       <ProductReview/>
       <PricingSection/>
 
-      <AnalyticsSection />
+      {/* <AnalyticsSection /> */}
 
       <Footer />
     </>
