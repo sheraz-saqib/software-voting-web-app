@@ -183,9 +183,9 @@ const Products = () => {
   background: 'linear-gradient(90deg, #817A99 0%, #0657D0 100%)',
   WebkitBackgroundClip: 'text', 
 }}>
-  {category.category_name} /
+  {category.category_name} 
 </h3>
-                  <a href="#" className="text-blue-600 hover:underline text-sm">See More</a>
+                  <Link href="/products/feature" className="text-blue-600 hover:underline text-sm">See More</Link>
                 </div>
                 <Link href="/innerproduct">
 

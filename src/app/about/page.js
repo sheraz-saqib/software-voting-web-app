@@ -17,7 +17,7 @@ const About = () => {
       </div>
       <WhyHasten />
       <FreelanceCard />
-      <ReviewSection/>
+      {/* <ReviewSection/> */}
       <Footer />
     </>
   );

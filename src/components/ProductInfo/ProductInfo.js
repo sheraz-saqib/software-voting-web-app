@@ -4,7 +4,7 @@ import PeraContent from "../Common/PeraContent";
 
 const ProductInfo = () => {
   return (
-    <div className="bg-[#F3F8FE] px-3 sm:px-6 md:px-12 py-8 w-full">
+    <div id="productInfo" className="bg-[#F3F8FE] px-3 sm:px-6 md:px-12 py-8 w-full">
       <Heading
         fontSize="font-semibold"
         textSize="text-2xl md:text-4xl"

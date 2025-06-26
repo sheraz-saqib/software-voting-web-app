@@ -108,49 +108,16 @@ const ProductBanner = () => {
         </div>
       </div>
       {/* Productivity Tools Section */}
-      <div className="px-2 md:px-3 bg-[#075CD6] w-full text-white py-4">
+      <div className="flex items-center px-2 md:px-3 bg-[#075CD6] w-full text-white py-2">
         {/* TOP NAVIGATION BAR */}
-        <nav className="flex space-x-2.5 md:space-x-4 px-3 md:px-5 mb-4 justify-start max-md:space-y-2 md:text-base text-xs">
-          <a href="#" className="hover:underline">PRODUCT INFORMATION</a>
-          <a href="#" className="hover:underline">REVIEWS</a>
-          <a href="#" className="hover:underline">PRICING</a>
+        <nav className="flex space-x-2.5 md:space-x-4 px-3 md:px-5 py-2  max-md:space-y-2 md:text-base text-xs">
+          <a href="#productInfo" className="hover:underline">PRODUCT INFORMATION</a>
+          <a href="#review" className="hover:underline">REVIEWS</a>
+          <a href="#pricing" className="hover:underline">PRICING</a>
         </nav>
 
         {/* BELOW NAV: Cards + Image + Features */}
-        <div className="flex px-4 items-start justify-between max-md:flex-col max-md:items-center">
-          {/* Cards Section */}
-          <div className="flex space-x-2 w-[50%] max-md:w-full max-md:flex-col max-md:space-x-0 max-md:space-y-4">
-            {productivityToolsData.map((tool, index) => (
-              <InnerProductCard
-                key={index}
-                imageSrc={tool.imageSrc}
-                productName={tool.productName}
-                category={tool.category}
-                badgeType={tool.badgeType}
-                className="max-md:w-full"
-              />
-            ))}
-          </div>
-
-          {/* Image */}
-          <img
-            src="/assets/images/template.png"
-            className="w-56 h-52 ml-4 max-lg:hidden"
-            alt=""
-          />
-
-          {/* Features */}
-          <div className="flex flex-col items-start w-[25%] h-52 justify-center max-md:w-full max-md:h-auto max-md:text-center max-md:mb-4">
-            <h2 className="text-xl font-bold">FEATURES</h2>
-            <p className="text-sm mt-2">
-              Introducing the work collection, a line of minimalistic bags designed
-              for new generation specifically for the modern professionals.
-            </p>
-            <a href="#" className="text-sm mt-2 text-yellow-200 hover:underline">
-              Read More...
-            </a>
-          </div>
-        </div>
+      
       </div>
     </>
   );
