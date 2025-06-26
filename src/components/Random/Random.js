@@ -1,8 +1,26 @@
+'use client'
 import React from 'react'
 import Heading from '../Common/Heading'
 import ProductCard from '../Common/ProductCard'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 const productivityToolsData = [
   {
+    imageSrc: "/assets/images/brands/trello.webp",
+    productName: "Trello",
+    category: "Project management",
+    badgeType: "free"
+  },
+   {
+    imageSrc: "/assets/images/brands/trello.webp",
+    productName: "Trello",
+    category: "Project management",
+    badgeType: "free"
+  }, {
     imageSrc: "/assets/images/brands/trello.webp",
     productName: "Trello",
     category: "Project management",
@@ -35,17 +53,36 @@ const Random = () => {
           text={"Random"}
         />
         {/* products */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4  mt-10 max-md:mt-10 mb-20 min-h-36  w-full max-w-[90%] ">
-        {productivityToolsData.map((tool, index) => (
-          <ProductCard
-            key={index}
-            imageSrc={tool.imageSrc}
-            productName={tool.productName}
-            category={tool.category}
-            badgeType={tool.badgeType}
-          />
-        ))}
-      </div>
+      <div className="w-full max-w-[90%] rounded-lg p-4">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={16}
+            slidesPerView={4}
+            navigation
+            pagination={{
+              clickable: true,
+              el: '.swiper-pagination',
+            }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 4 },
+            }}
+            className="custom-swiper pb-12"
+          >
+            {productivityToolsData.map((tool, index) => (
+              <SwiperSlide key={index} >
+                <ProductCard
+                  imageSrc={tool.imageSrc}
+                  productName={tool.productName}
+                  category={tool.category}
+                  badgeType={tool.badgeType}
+                />
+              </SwiperSlide>
+            ))}
+         
+          </Swiper>
+        </div>
          </div>
     </div>
   )
