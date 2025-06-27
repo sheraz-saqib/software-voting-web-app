@@ -141,7 +141,7 @@ const ProductFilterDropdown = ({
               </button>
               {openTab === "subscription" && (
                 <div className="ml-4 mt-2 space-y-1">
-                  {["Paid", "Free", "Freemium"].map((subscription) => (
+                  {[ "Free", "Freemium"].map((subscription) => (
                     <label
                       key={subscription}
                       className="flex items-center text-sm text-[#7A7491] py-1 px-3 rounded-md hover:bg-[#F2F9FE] transition"

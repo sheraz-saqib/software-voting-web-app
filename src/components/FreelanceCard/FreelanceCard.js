@@ -31,6 +31,15 @@ const FeedbackCardData = [
     authorName: "Asana Malik",
     authorDesc: "Equity Analyst at InvestIQ",
   },
+   {
+    text: "The investment tracker keeps me updated on my portfolio performance. It’s like having a personal financial advisor!",
+    authorName: "Asana Malik",
+    authorDesc: "Equity Analyst at InvestIQ",
+  }, {
+    text: "The investment tracker keeps me updated on my portfolio performance. It’s like having a personal financial advisor!",
+    authorName: "Asana Malik",
+    authorDesc: "Equity Analyst at InvestIQ",
+  },
 ];
 
 const FreelanceCard = () => {
@@ -81,7 +90,6 @@ const FreelanceCard = () => {
       );
     }
 
-    // Cleanup ScrollTrigger on component unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };

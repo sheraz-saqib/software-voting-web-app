@@ -3,7 +3,6 @@ import React from 'react';
 const Badge = ({ text, className = '', type }) => {
   const badgeConfig = {
     freemium: { text: 'Freemium', color: '#00BA00' }, // Green
-    paid: { text: 'Paid', color: '#EF4444' }, // Red
     free_trial: { text: 'Free Trial', color: '#FFAE00' }, // Yellow
     free: { text: 'Free', color: '#0095FF' } // Blue
   };

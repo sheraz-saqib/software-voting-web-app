@@ -42,7 +42,7 @@ const PricingSection = () => {
       buttonClass: "bg-white text-black font-medium",
     },
     {
-      plan: "Paid",
+      plan: "freemium",
       price: "$99",
       noCreditCard: "30-day money-back guarantee",
       trialDuration: "30 days",

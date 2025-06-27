@@ -30,9 +30,27 @@ const productivityToolsData = [
     imageSrc: "/assets/images/brands/slack.png",
     productName: "Slack",
     category: "Team communication",
-    badgeType: "paid",
+    badgeType: "freemium",
   },
   {
+    imageSrc: "/assets/images/brands/asana.webp",
+    productName: "Asana",
+    category: "Task management",
+    badgeType: "free_trial",
+  },
+  {
+    imageSrc: "/assets/images/brands/asana.webp",
+    productName: "Asana",
+    category: "Task management",
+    badgeType: "free_trial",
+  },
+    {
+    imageSrc: "/assets/images/brands/asana.webp",
+    productName: "Asana",
+    category: "Task management",
+    badgeType: "free_trial",
+  },
+    {
     imageSrc: "/assets/images/brands/asana.webp",
     productName: "Asana",
     category: "Task management",

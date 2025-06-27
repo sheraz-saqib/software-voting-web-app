@@ -17,7 +17,7 @@ const DashboardTab = () => {
         { imageSrc: "/assets/images/brands/notion.jpg", productName: "Notion", category: "Note taking", badgeType: "freemium" },
       ],
       reviews: [
-        { imageSrc: "/assets/images/brands/slack.png", productName: "Slack", category: "Team communication", badgeType: "paid" },
+        { imageSrc: "/assets/images/brands/slack.png", productName: "Slack", category: "Team communication", badgeType: "freemium" },
         { imageSrc: "/assets/images/brands/asana.webp", productName: "Asana", category: "Task management", badgeType: "free_trial" },
       ],
       visits: [

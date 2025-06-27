@@ -89,7 +89,7 @@ const Products = () => {
           imageSrc: "/assets/images/brands/trello.webp",
           productName: "Slack",
           category: "Team communication",
-          badgeType: "paid",
+          badgeType: "freemium",
           href: "/innerproduct",
         },
         {
