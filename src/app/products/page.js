@@ -161,24 +161,6 @@ const Products = () => {
       }
     );
 
-    // Animate Search Bar
-    gsap.fromTo(
-      searchBarRef.current,
-      { opacity: 0, scale: 0.95 },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.8,
-        ease: "power3.out",
-        delay: 0.4,
-        scrollTrigger: {
-          trigger: searchBarRef.current,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-
     // Animate Filter Dropdown
     gsap.fromTo(
       filterDropdownRef.current,
@@ -314,7 +296,7 @@ const Products = () => {
                 </svg>
               </button>
             </div>
-            <div ref={filterDropdownRef}>
+            <div className="relative z-[1000]" ref={filterDropdownRef}>
               <FilterDropdown
                 selectedCategories={selectedCategories}
                 selectedRatings={selectedRatings}
