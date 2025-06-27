@@ -60,78 +60,79 @@ const RankingSection = () => {
     });
   };
 
-  const rankings = [
-    {
-      rank: 1,
-      tool: "Trello",
-      monthlyVisit: "5.1B",
-      growth: "593.2M",
-      growthRate: "13.04%",
-      introduction:
-        "Lorem ipsum dolor sit amet consectetur. Vitae amet auctor eget scelerisque quisque sit venenatis netus elementum.",
-      tags: "Lorem ipsum, Lorem ipsum, Lorem ipsum",
-    },
-    {
-      rank: 2,
-      tool: "Zoho CRM",
-      monthlyVisit: "701.3M",
-      growth: "142.0M",
-      growthRate: "25.40%",
-      introduction:
-        "Lorem ipsum dolor sit amet consectetur. Vitae amet auctor eget scelerisque quisque sit venenatis netus elementum.",
-      tags: "Lorem ipsum, Lorem ipsum, Lorem ipsum",
-    },
-    {
-      rank: 3,
-      tool: "OneDrive",
-      monthlyVisit: "701.3M",
-      growth: "142.0M",
-      growthRate: "19.36%",
-      introduction:
-        "Lorem ipsum dolor sit amet consectetur. Vitae amet auctor eget scelerisque quisque sit venenatis netus elementum.",
-      tags: "Lorem ipsum, Lorem ipsum, Lorem ipsum",
-    },
-    {
-      rank: 4,
-      tool: "Clockify",
-      monthlyVisit: "409.4M",
-      growth: "66.4M",
-      growthRate: "19.36%",
-      introduction:
-        "Lorem ipsum dolor sit amet consectetur. Vitae amet auctor eget scelerisque quisque sit venenatis netus elementum.",
-      tags: "Lorem ipsum, Lorem ipsum, Lorem ipsum",
-    },
-    {
-      rank: 5,
-      tool: "Clockify",
-      monthlyVisit: "409.4M",
-      growth: "66.4M",
-      growthRate: "19.36%",
-      introduction:
-        "Lorem ipsum dolor sit amet consectetur. Vitae amet auctor eget scelerisque quisque sit venenatis netus elementum.",
-      tags: "Lorem ipsum, Lorem ipsum, Lorem ipsum",
-    },
-    {
-      rank: 6,
-      tool: "Clockify",
-      monthlyVisit: "409.4M",
-      growth: "66.4M",
-      growthRate: "19.36%",
-      introduction:
-        "Lorem ipsum dolor sit amet consectetur. Vitae amet auctor eget scelerisque quisque sit venenatis netus elementum.",
-      tags: "Lorem ipsum, Lorem ipsum, Lorem ipsum",
-    },
-    {
-      rank: 7,
-      tool: "Clockify",
-      monthlyVisit: "409.4M",
-      growth: "66.4M",
-      growthRate: "19.36%",
-      introduction:
-        "Lorem ipsum dolor sit amet consectetur. Vitae amet auctor eget scelerisque quisque sit venenatis netus elementum.",
-      tags: "Lorem ipsum, Lorem ipsum, Lorem ipsum",
-    },
-  ];
+const rankings = [
+  {
+    rank: 1,
+    tool: "Trello",
+    monthlyVisit: "5.1B",
+    growth: "593.2M",
+    growthRate: "13.04%",
+    introduction:
+      "Trello is a visual collaboration tool that helps teams organize projects using boards, lists, and cards. It's ideal for task tracking and agile workflows.",
+    tags: "Project Management, Task Tracking, Kanban",
+  },
+  {
+    rank: 2,
+    tool: "Zoho CRM",
+    monthlyVisit: "701.3M",
+    growth: "142.0M",
+    growthRate: "25.40%",
+    introduction:
+      "Zoho CRM is a cloud-based customer relationship management software that helps businesses manage sales, marketing, and support in a single system.",
+    tags: "CRM, Sales Automation, Business Tools",
+  },
+  {
+    rank: 3,
+    tool: "OneDrive",
+    monthlyVisit: "701.3M",
+    growth: "142.0M",
+    growthRate: "19.36%",
+    introduction:
+      "OneDrive by Microsoft is a secure cloud storage service that allows users to store files and access them from any device, anywhere.",
+    tags: "Cloud Storage, File Sharing, Microsoft",
+  },
+  {
+    rank: 4,
+    tool: "Clockify",
+    monthlyVisit: "409.4M",
+    growth: "66.4M",
+    growthRate: "19.36%",
+    introduction:
+      "Clockify is a free time-tracking tool for teams and freelancers. It helps track work hours, monitor productivity, and generate detailed reports.",
+    tags: "Time Tracking, Productivity, Reporting",
+  },
+  {
+    rank: 5,
+    tool: "Slack",
+    monthlyVisit: "380.2M",
+    growth: "54.1M",
+    growthRate: "16.38%",
+    introduction:
+      "Slack is a messaging app for teams that brings all communication together, offering channels, file sharing, and integrations with other tools.",
+    tags: "Team Communication, Messaging, Collaboration",
+  },
+  {
+    rank: 6,
+    tool: "Asana",
+    monthlyVisit: "342.7M",
+    growth: "48.9M",
+    growthRate: "14.26%",
+    introduction:
+      "Asana is a project management tool that helps teams plan, organize, and track work in a collaborative way.",
+    tags: "Task Management, Workflow, Collaboration",
+  },
+  {
+    rank: 7,
+    tool: "Notion",
+    monthlyVisit: "328.5M",
+    growth: "46.7M",
+    growthRate: "13.10%",
+    introduction:
+      "Notion is an all-in-one workspace for note-taking, project management, and collaboration. It blends documents, wikis, and databases in one tool.",
+    tags: "Productivity, Note-taking, All-in-One Workspace",
+  },
+];
+
 
   return (
     <div className="bg-[#F2F9FE] py-10 px-4 sm:px-6 md:px-10">
@@ -145,14 +146,15 @@ const RankingSection = () => {
         </h2>
       </div>
 
-      <div className="w-full sm:w-3/4 md:w-3/4 mx-auto mt-4 text-center">
-        <PeraContent
-          className="text-sm sm:text-base md:text-lg text-[#7A7491]"
-          text={
-            "Lorem ipsum dolor sit amet consectetur. Vel tristique sapien dignissim sit platea urna vel aliquet. Ridiculus vitae eu lectus quam mus non sit morbi."
-          }
-        />
-      </div>
+    <div className="w-full sm:w-3/4 md:w-3/4 mx-auto mt-4 text-center">
+  <PeraContent
+    className="text-sm sm:text-base md:text-lg text-[#7A7491]"
+    text={
+      "Discover top freemium tools that empower individuals and teams to work smarter, faster, and more efficiently—without upfront costs. Vote for your favorites and explore what's trending in the productivity space."
+    }
+  />
+</div>
+
 
       <div className="flex justify-center mt-8">
      <nav className="bg-white w-full max-w-7xl p-2 rounded-lg shadow-md overflow-x-auto sm:overflow-visible">

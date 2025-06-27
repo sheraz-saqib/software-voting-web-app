@@ -267,18 +267,19 @@ const Products = () => {
               </span>{" "}
               <span className="text-black">to</span>
             </h1>
-            <h2 className="text-xl sm:text-2xl md:text-5xl font-bold text-black mt-2">
-              Freemium Products
-            </h2>
-          </div>
-          <div ref={peraContentRef}>
-            <PeraContent
-              className="text-sm sm:text-base md:text-lg text-[#7A7491]"
-              text={
-                "Lorem ipsum dolor sit amet consectetur. Vel tristique sapien dignissim sit platea urna vel aliquet. Ridiculus vitae eu lectus quam mus non sit morbi."
-              }
-            />
-          </div>
+        <h2 className="text-xl sm:text-2xl md:text-5xl font-bold text-black mt-2">
+  Freemium Products
+</h2>
+</div>
+<div ref={peraContentRef}>
+  <PeraContent
+    className="text-sm sm:text-base md:text-lg text-[#7A7491]"
+    text={
+      "Explore our range of freemium products designed to offer high value without any cost. Perfect for users who want to experience premium features before committing to an upgrade."
+    }
+  />
+</div>
+
           {/* search bar and filter */}
           <div
             ref={searchBarRef}

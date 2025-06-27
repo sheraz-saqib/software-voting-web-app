@@ -93,41 +93,44 @@ const WhyHasten = () => {
 
   return (
     <div className="px-5 md:px-16 flex flex-col bg-[#F2F9FE]">
-      <div ref={heading1Ref}>
-        <Heading
-          textSize="text-2xl md:text-5xl"
-          className="text-left"
-          text={"Why Hasten"}
-        />
-      </div>
-      <div ref={peraContent1Ref}>
-        <PeraContent
-          align="left"
-          className="text-black"
-          text={`
-            Lorem ipsum dolor sit amet consectetur. Eget ullamcorper ultricies dictum nulla volutpat mi cras libero nunc. Ut consectetur etiam pellentesque id nunc. Nunc quisque at eu urna tempus nam porttitor tellus. Sem pretium quis urna tincidunt.
-            <br /><br />
-            Lorem ipsum dolor sit amet consectetur. Mauris porta vel tortor netus nisl ultrices consequat hac. Risus dictumst aliquet sit diam leo et sit. Amet aenean ac vulputate amet dictum sit. Elementum purus ornare et est lacinia. Felis commodo leo nunc odio senectus euismod lobortis. Imperdiet adipiscing sed aenean facilisis dis neque quis elit. Tristique morbi eu suscipit turpis magnis.
-          `}
-        />
-      </div>
+     <div ref={heading1Ref}>
+  <Heading
+    textSize="text-2xl md:text-5xl"
+    className="text-left"
+    text={"Why Hasten"}
+  />
+</div>
+<div ref={peraContent1Ref}>
+  <PeraContent
+    align="left"
+    className="text-black"
+    text={`
+      Hasten is designed to simplify and elevate the way users engage in voting and decision-making. With a focus on speed, ease of use, and accessibility, our platform helps individuals and organizations create polls and collect feedback effortlessly.
+      <br /><br />
+      Whether you're organizing community opinions, conducting internal team surveys, or gathering votes for fun, Hasten delivers a streamlined experience with powerful features to match your needs—all without the complexity of traditional tools.
+    `}
+  />
+</div>
 
-      <div ref={heading2Ref}>
-        <Heading
-          textSize="text-2xl md:text-5xl"
-          className="mt-6 text-left"
-          text={"Privacy-focused"}
-        />
-      </div>
-      <div ref={peraContent2Ref}>
-        <PeraContent
-          align="left"
-          className="text-black"
-          text={`
-            Lorem ipsum dolor sit amet consectetur. Mauris porta vel tortor netus nisl ultrices consequat hac. Risus dictumst aliquet sit diam leo et sit. Amet aenean ac vulputate amet dictum sit. Elementum purus ornare et est lacinia. Felis commodo leo nunc odio senectus euismod lobortis. Imperdiet adipiscing sed aenean facilisis dis neque quis elit. Tristique morbi eu suscipit turpis magnis.
-          `}
-        />
-      </div>
+<div ref={heading2Ref}>
+  <Heading
+    textSize="text-2xl md:text-5xl"
+    className="mt-6 text-left"
+    text={"Privacy-focused"}
+  />
+</div>
+<div ref={peraContent2Ref}>
+  <PeraContent
+    align="left"
+    className="text-black"
+    text={`
+      Your data privacy is our top priority. Hasten ensures all user information and poll responses are handled securely and are never shared with third parties.
+      <br /><br />
+      We use modern encryption standards and minimal data storage practices to maintain user trust and protect your sensitive information. Whether you're a casual user or an organization, you can rely on Hasten to keep your data safe and private.
+    `}
+  />
+</div>
+
     </div>
   );
 };
