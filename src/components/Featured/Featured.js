@@ -20,6 +20,17 @@ const productivityToolsData = [
     badgeType: "free",
   },
   {
+    imageSrc: "/assets/images/brands/trello.webp",
+    productName: "Trello",
+    category: "Project management",
+    badgeType: "free",
+  },{
+    imageSrc: "/assets/images/brands/trello.webp",
+    productName: "Trello",
+    category: "Project management",
+    badgeType: "free",
+  },
+  {
     imageSrc: "/assets/images/brands/notion.jpg",
     productName: "Notion",
     category: "Note taking",
@@ -29,7 +40,7 @@ const productivityToolsData = [
     imageSrc: "/assets/images/brands/slack.png",
     productName: "Slack",
     category: "Team communication",
-    badgeType: "paid",
+    badgeType: "freemium",
   },
   {
     imageSrc: "/assets/images/brands/asana.webp",

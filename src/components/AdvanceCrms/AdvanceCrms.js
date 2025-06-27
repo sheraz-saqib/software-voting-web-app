@@ -27,7 +27,19 @@ const productivityToolsData = [
     imageSrc: "/assets/images/brands/slack.png",
     productName: "Slack",
     category: "Team communication",
-    badgeType: "paid",
+    badgeType: "freemium",
+  },
+    {
+    imageSrc: "/assets/images/brands/slack.png",
+    productName: "Slack",
+    category: "Team communication",
+    badgeType: "freemium",
+  },
+    {
+    imageSrc: "/assets/images/brands/slack.png",
+    productName: "Slack",
+    category: "Team communication",
+    badgeType: "freemium",
   },
   {
     imageSrc: "/assets/images/brands/asana.webp",
