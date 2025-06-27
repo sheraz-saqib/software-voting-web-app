@@ -95,7 +95,7 @@ const FilterDropdown = ({
         </svg>
       </button>
       {isFilterOpen && (
-        <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg p-4 z-10 sm:w-80">
+        <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg p-4 z-50 sm:w-80">
           <h3 className="text-lg font-semibold text-[#5C70A9] mb-3">Sort By</h3>
           <div className="space-y-2">
             {/* Category */}
@@ -111,7 +111,7 @@ const FilterDropdown = ({
               </button>
               {openTab === "category" && (
                 <div className="ml-4 mt-2 max-h-[50vh]">
-                  <div className="sticky top-0 bg-white z-10 mb-3">
+                  <div className="sticky top-0 bg-white z-50 mb-3">
                     <input
                       type="text"
                       placeholder="Search categories..."
