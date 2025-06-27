@@ -90,6 +90,7 @@ const ProductInfo = () => {
 
       <div ref={peraContentRef} className="mb-6 text-left max-w-5xl w-full">
         <PeraContent
+        className="flex w-full text-left justify-start items-start"
           text="Trello is the flexible work management tool where teams can ideate plans, collaborate on projects, organize workflows, and track progress in a visual, productive, and rewarding way. From brainstorm to planning to execution, Trello manages the big milestones and the day-to-day tasks of working together and getting things done."
         />
       </div>

@@ -15,7 +15,7 @@ const page = () => {
       <ProductBanner />
       <ProductInfo />
       <ProductReview/>
-      <PricingSection/>
+      {/* <PricingSection/> */}
       <ProductAndFeatureCard/>
 
 

@@ -105,12 +105,13 @@ const AboutSection = () => {
           <Heading fontSize="font-semibold" className="" text={"About Us"} />
         </div>
         <div ref={peraContentRef}>
-          <PeraContent
-            className="flex justify-center items-center text-black"
-            text={
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            }
-          />
+         <PeraContent
+  className="flex justify-center items-center text-black"
+  text={
+    "For our freemium website where users can visit and participate in voting. We aim to provide a simple, engaging, and user-friendly platform for community-driven decision-making."
+}
+/>
+
         </div>
       </div>
 

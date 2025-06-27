@@ -143,9 +143,9 @@ const ProductBanner = () => {
           <div className="flex items-center justify-between max-md:flex-col max-md:items-start">
             <div className="relative flex max-md:w-full">
               <h1 className="text-4xl font-bold">Trello</h1>
-              <span className="absolute -right-12 -top-1 flex justify-center items-center bg-[#075CD6] text-white text-xs font-medium px-3 py-1 rounded-full max-md:static max-md:ml-2">
+              {/* <span className="absolute -right-12 -top-1 flex justify-center items-center bg-[#075CD6] text-white text-xs font-medium px-3 py-1 rounded-full max-md:static max-md:ml-2">
                 Free
-              </span>
+              </span> */}
             </div>
           </div>
           <p className="mt-4 max-md:w-full">
@@ -220,9 +220,9 @@ const ProductBanner = () => {
             <a href="#review" className="hover:underline">
               REVIEWS
             </a>
-            <a href="#pricing" className="hover:underline">
+            {/* <a href="#pricing" className="hover:underline">
               PRICING
-            </a>
+            </a> */}
           </nav>
         </div>
        
